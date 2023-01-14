@@ -1,7 +1,14 @@
+import styled from 'styled-components';
+
+const StyledParagraph = styled.p`
+  color: blue;
+  font-family: ${({ theme }) => theme.font.primary};
+`;
+
 const Test = () => {
   return (
     <>
-      <p>Test</p>
+      <StyledParagraph>Test</StyledParagraph>
     </>
   );
 };
