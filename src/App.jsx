@@ -1,7 +1,11 @@
+import GlobalStyles from "./components/styles/GlobalStyles";
+import Test from "./components/Test";
+
 function App() {
   return (
     <>
-      <h1>Test</h1>
+      <GlobalStyles />
+      <Test />
     </>
   );
 }
