@@ -1,14 +1,14 @@
 import { ThemeProvider } from 'styled-components';
+import AppContainer from './components/AppContainer';
 import GridContainer from './components/GridContainer';
 import Header from './components/Header';
 import GlobalStyles from './components/styles/GlobalStyles';
-import Test from './components/Test';
 
 const theme = {
   // Fix the naming conventions when styles are actually applied
   color: {
     primary: '#3a7bfd',
-    gradient: ['87, 221, 255, 0.1', '192, 88, 243, 0.1'],
+
     trueGradient: ['rgba(87, 221, 255, 0.2)', 'rgba(192, 88, 243, 0.2)'],
 
     lightTheme: {
@@ -41,6 +41,7 @@ function App() {
         <GlobalStyles />
         <GridContainer>
           <Header />
+          <AppContainer />
         </GridContainer>
       </ThemeProvider>
     </>
