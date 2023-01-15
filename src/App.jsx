@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import AppContainer from './components/AppContainer';
+import Bottom from './components/Bottom';
 import GridContainer from './components/GridContainer';
 import Header from './components/Header';
 import GlobalStyles from './components/styles/GlobalStyles';
@@ -41,6 +42,7 @@ function App() {
         <GlobalStyles />
         <GridContainer>
           <Header />
+          <Bottom />
           <AppContainer />
         </GridContainer>
       </ThemeProvider>

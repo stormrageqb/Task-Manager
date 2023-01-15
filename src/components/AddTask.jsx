@@ -11,7 +11,9 @@ const StyledArticle = styled.article`
   border-radius: 0.4rem;
 `;
 
-const StyledCheckMarkIcon = styled(CheckMarkIcon)``;
+const StyledCheckMarkIcon = styled(CheckMarkIcon)`
+  cursor: pointer;
+`;
 
 const StyledInput = styled.input`
   border: none;

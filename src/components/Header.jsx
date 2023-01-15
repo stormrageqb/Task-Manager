@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const StyledHeader = styled.header`
   grid-column: full-start / full-end;
+  grid-row: 1 / 4;
 
   background-image: linear-gradient(
       to right,
