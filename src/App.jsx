@@ -8,7 +8,8 @@ const theme = {
   // Fix the naming conventions when styles are actually applied
   color: {
     primary: '#3a7bfd',
-    gradient: ['#57ddff', '#c058f3'],
+    gradient: ['87, 221, 255, 0.1', '192, 88, 243, 0.1'],
+    trueGradient: ['rgba(87, 221, 255, 0.2)', 'rgba(192, 88, 243, 0.2)'],
 
     lightTheme: {
       lightGray: '#fafafa',
