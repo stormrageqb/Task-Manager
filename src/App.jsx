@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import GridContainer from './components/GridContainer';
+import Header from './components/Header';
 import GlobalStyles from './components/styles/GlobalStyles';
 import Test from './components/Test';
 
@@ -38,7 +39,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         <GridContainer>
-          <Test />
+          <Header />
         </GridContainer>
       </ThemeProvider>
     </>
