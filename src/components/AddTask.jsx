@@ -9,10 +9,30 @@ const StyledArticle = styled.article`
   padding: 1.5rem;
   background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
   border-radius: 0.4rem;
+
+  & div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${({ theme }) => theme.color.primary};
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    outline: 0.13rem solid ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+
+    background-color: transparent;
+  }
 `;
 
 const StyledCheckMarkIcon = styled(CheckMarkIcon)`
   cursor: pointer;
+  /* background-color: ${({ theme }) => theme.color.primary}; */
+  /* width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%; */
+  /* outline: ${({ theme }) =>
+    theme.color.darkTheme.darkGrayBlue} solid 0.1rem; */
+  transform: scale(0.8);
 `;
 
 const StyledInput = styled.input`
@@ -32,7 +52,7 @@ const StyledInput = styled.input`
 const AddTask = () => {
   return (
     <StyledArticle>
-      <StyledCheckMarkIcon />
+      <div>{/* <StyledCheckMarkIcon /> */}</div>
       <StyledInput placeholder="Create a new todo..." />
     </StyledArticle>
   );

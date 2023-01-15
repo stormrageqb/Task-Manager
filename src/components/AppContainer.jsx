@@ -35,7 +35,7 @@ const StyledAppContainer = styled.div`
     theme.color.darkTheme.darkestGrayBlue}; */
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: min-content min-content min-content;
+  grid-template-rows: 5.2rem min-content min-content;
   height: 50rem;
   /* transform: translateY(-55rem); */
   /* transform: translateY(-18rem); */
