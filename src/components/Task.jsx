@@ -7,6 +7,9 @@ const StyledTask = styled.div`
 `;
 
 const StyledListItem = styled.li`
+  font-size: 1.6rem;
+  color: ${({ theme }) => theme.color.lightTheme.lightGray};
+  font-weight: 400;
   display: grid;
   grid-template-columns: 1fr 10fr 2fr;
   align-items: center;
@@ -26,11 +29,11 @@ const StyledListItem = styled.li`
   }
 `;
 
-const Task = ({ text }) => {
+const Task = ({ task }) => {
   return (
-    <StyledListItem key={text}>
+    <StyledListItem>
       <Checkbox />
-      <label htmlFor="">{text}</label>
+      <label htmlFor="">{task.text}</label>
     </StyledListItem>
   );
 };

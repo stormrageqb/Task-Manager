@@ -48,6 +48,9 @@ const StyledInput = styled.input`
     border: none;
     outline: none;
   }
+  &::placeholder {
+    font-weight: 500;
+  }
 `;
 
 const AddTask = () => {

@@ -20,10 +20,9 @@ const StyledTaskList = styled.ul`
 const TaskList = () => {
   return (
     <StyledTaskListSection>
-      {/* <Checkbox /> */}
       <StyledTaskList>
         {taskData.map(task => {
-          return <Task text={task.text} />;
+          return <Task key={task.id} task={task} />;
         })}
       </StyledTaskList>
     </StyledTaskListSection>
