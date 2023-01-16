@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import React from 'react';
 import SunIcon from '/src/assets/icon-sun.svg';
 import AddTask from './AddTask';
+import TaskList from './TaskList';
 
 const StyledSunIcon = styled(SunIcon)`
   fill: ${({ theme }) => theme.color.lightTheme.lightGray};
@@ -49,6 +50,7 @@ const AppContainer = () => {
         <StyledSunIcon />
       </StyledAppHeader>
       <AddTask />
+      <TaskList />
     </StyledAppContainer>
   );
 };
