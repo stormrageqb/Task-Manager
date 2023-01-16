@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import AppContainer from './components/AppContainer';
-import Bottom from './components/Bottom';
+import EmptySection from './components/EmptySection';
 import GridContainer from './components/GridContainer';
 import Header from './components/Header';
 import GlobalStyles from './components/styles/GlobalStyles';
@@ -9,7 +9,6 @@ const theme = {
   // Fix the naming conventions when styles are actually applied
   color: {
     primary: '#3a7bfd',
-
     trueGradient: ['rgba(87, 221, 255, 0.2)', 'rgba(192, 88, 243, 0.2)'],
 
     lightTheme: {
@@ -42,7 +41,7 @@ function App() {
         <GlobalStyles />
         <GridContainer>
           <Header />
-          <Bottom />
+          <EmptySection />
           <AppContainer />
         </GridContainer>
       </ThemeProvider>

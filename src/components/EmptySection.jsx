@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledBottom = styled.div`
+const StyledEmptySection = styled.div`
   grid-column: full-start / full-end;
   grid-row: 4 / -1;
 
@@ -8,8 +8,8 @@ const StyledBottom = styled.div`
   height: 100%;
 `;
 
-const Bottom = ({ children }) => {
-  return <StyledBottom />;
+const EmptySection = () => {
+  return <StyledEmptySection />;
 };
 
-export default Bottom;
+export default EmptySection;

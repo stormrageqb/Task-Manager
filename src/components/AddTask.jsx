@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Checkbox from './Checkbox';
-import CheckMarkIcon from '/src/assets/icon-check.svg';
 
 const StyledArticle = styled.article`
   grid-column: 1 / -1;
