@@ -6,6 +6,8 @@ import Task from './Task';
 
 const StyledTaskListSection = styled.section`
   grid-column: 1 / -1;
+  /* box-shadow: rgba(0, 0, 0, 0.2) 0.1rem 0.4rem 1.2rem; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
 `;
 
 const StyledTaskList = styled.ul`
@@ -19,13 +21,25 @@ const StyledTaskList = styled.ul`
 `;
 
 const StyledTaskListFooter = styled.footer`
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr); */
   background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
-  & div {
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  & article {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 0.7rem 1.5rem;
+    align-items: center;
+    padding: 1rem 1.5rem;
+
+    & span {
+      font-size: 1.1rem;
+      color: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+      font-weight: 400;
+    }
+
+    & div {
+      display: flex;
+      gap: 1.2rem;
+    }
   }
 `;
 
@@ -38,15 +52,17 @@ const TaskList = () => {
         })}
       </StyledTaskList>
       <StyledTaskListFooter>
-        <div>
+        <article>
           <span>5 items left</span>
           <div>
-            <Button>All</Button>
-            <Button>Active</Button>
-            <Button>Completed</Button>
+            <Button footer>All</Button>
+            <Button footer>Active</Button>
+            <Button footer>Completed</Button>
           </div>
-          <Button>Clear completed</Button>
-        </div>
+          <Button footer lastChild>
+            Clear completed
+          </Button>
+        </article>
       </StyledTaskListFooter>
     </StyledTaskListSection>
   );

@@ -9,6 +9,8 @@ const StyledForm = styled.form`
   padding: 1.5rem;
   background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
   border-radius: 0.4rem;
+  /* box-shadow: rgba(0, 0, 0, 0.2) 0.8rem 0.4rem 1.2rem; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
 
   /* & div {
     display: flex;

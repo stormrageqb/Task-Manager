@@ -40,6 +40,7 @@ const StyledAppContainer = styled.div`
   height: 50rem;
 
   row-gap: 2rem;
+
   /* background-color: red; */
 `;
 
