@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Checkbox from './Checkbox';
 import CheckMarkIcon from '/src/assets/icon-check.svg';
 
 const StyledArticle = styled.article`
@@ -10,7 +11,7 @@ const StyledArticle = styled.article`
   background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
   border-radius: 0.4rem;
 
-  & div {
+  /* & div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,25 +22,26 @@ const StyledArticle = styled.article`
     outline: 0.13rem solid ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
 
     background-color: transparent;
-  }
+  } */
 `;
 
-const StyledCheckMarkIcon = styled(CheckMarkIcon)`
-  cursor: pointer;
-  /* background-color: ${({ theme }) => theme.color.primary}; */
-  /* width: 1.5rem;
+// const StyledCheckMarkIcon = styled(CheckMarkIcon)`
+// cursor: pointer;
+/* background-color: ${({ theme }) => theme.color.primary}; */
+/* width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%; */
-  /* outline: ${({ theme }) =>
+/* outline: ${({ theme }) =>
     theme.color.darkTheme.darkGrayBlue} solid 0.1rem; */
-  transform: scale(0.8);
-`;
+/* transform: scale(0.8); */
+// `;
 
 const StyledInput = styled.input`
   border: none;
+  display: block;
   font-family: inherit;
   font-size: 1.6rem;
-  padding: 0.3rem 0;
+  padding: 0.2rem 0;
   background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
   color: ${({ theme }) => theme.color.lightTheme.lightGray};
 
@@ -52,8 +54,12 @@ const StyledInput = styled.input`
 const AddTask = () => {
   return (
     <StyledArticle>
-      <div>{/* <StyledCheckMarkIcon /> */}</div>
-      <StyledInput placeholder="Create a new todo..." />
+      {/* <div><StyledCheckMarkIcon /></div> */}
+      <Checkbox />
+      <StyledInput
+        placeholder="Create a new todo..."
+        aria-label="Create a new todo..."
+      />
     </StyledArticle>
   );
 };

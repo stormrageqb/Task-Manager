@@ -31,14 +31,12 @@ const StyledAppContainer = styled.div`
   grid-row: 2 / 3;
   grid-row: 2 / 5;
 
-  /* background-color: ${({ theme }) =>
-    theme.color.darkTheme.darkestGrayBlue}; */
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  /* 5.2rem equals a total of a 4rem gap between AppHeader and AddTask components */
   grid-template-rows: 5.2rem min-content min-content;
   height: 50rem;
-  /* transform: translateY(-55rem); */
-  /* transform: translateY(-18rem); */
+
   row-gap: 2rem;
   /* background-color: red; */
 `;
