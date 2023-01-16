@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
-  color: ${({ theme }) => theme.color.lightTheme.lightGray};
+  color: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
   display: inline-block;
   border: none;
   font-size: 1rem;
@@ -9,7 +9,7 @@ const StyledButton = styled.button`
   background-color: transparent;
   font-family: inherit;
   cursor: pointer;
-  transition: all 0.2s ease-out;
+  transition: all 0.2s;
   width: fit-content;
   place-self: center;
   &:hover {

@@ -24,10 +24,6 @@ const StyledListItem = styled.li`
     border-top-left-radius: 0.4rem;
     border-top-right-radius: 0.4rem;
   }
-  :last-child {
-    border-bottom-left-radius: 0.4rem;
-    border-bottom-right-radius: 0.4rem;
-  }
 `;
 
 const Task = ({ task }) => {

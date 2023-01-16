@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { taskData } from '../taskData';
+import Button from './Button';
 import Checkbox from './Checkbox';
 import Task from './Task';
 
@@ -17,6 +18,17 @@ const StyledTaskList = styled.ul`
   border-radius: 0.4rem; */
 `;
 
+const StyledTaskListFooter = styled.footer`
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
+  & div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0.7rem 1.5rem;
+  }
+`;
+
 const TaskList = () => {
   return (
     <StyledTaskListSection>
@@ -25,6 +37,17 @@ const TaskList = () => {
           return <Task key={task.id} task={task} />;
         })}
       </StyledTaskList>
+      <StyledTaskListFooter>
+        <div>
+          <span>5 items left</span>
+          <div>
+            <Button>All</Button>
+            <Button>Active</Button>
+            <Button>Completed</Button>
+          </div>
+          <Button>Clear completed</Button>
+        </div>
+      </StyledTaskListFooter>
     </StyledTaskListSection>
   );
 };
