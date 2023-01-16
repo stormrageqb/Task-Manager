@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from './Button';
 import Checkbox from './Checkbox';
 
 const StyledTask = styled.div`
@@ -34,6 +35,7 @@ const Task = ({ task }) => {
     <StyledListItem>
       <Checkbox />
       <label htmlFor="">{task.text}</label>
+      <Button>Edit</Button>
     </StyledListItem>
   );
 };
