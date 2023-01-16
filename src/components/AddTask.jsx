@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Checkbox from './Checkbox';
 
-const StyledArticle = styled.article`
+const StyledForm = styled.form`
   grid-column: 1 / -1;
   display: grid;
   align-items: center;
@@ -52,14 +52,15 @@ const StyledInput = styled.input`
 
 const AddTask = () => {
   return (
-    <StyledArticle>
+    <StyledForm>
       {/* <div><StyledCheckMarkIcon /></div> */}
+
       <Checkbox />
       <StyledInput
         placeholder="Create a new todo..."
         aria-label="Create a new todo..."
       />
-    </StyledArticle>
+    </StyledForm>
   );
 };
 
