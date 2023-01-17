@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from './Button';
 import Checkbox from './Checkbox';
 
 const StyledForm = styled.form`
@@ -65,6 +66,7 @@ const AddTask = () => {
         placeholder="Create a new todo..."
         aria-label="Create a new todo..."
       />
+      <Button type="submit">Add</Button>
     </StyledForm>
   );
 };
