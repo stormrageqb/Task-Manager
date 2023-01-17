@@ -43,11 +43,12 @@ const StyledTaskListFooter = styled.footer`
   }
 `;
 
-const TaskList = () => {
+const TaskList = ({ tasks }) => {
+  console.log(tasks);
   return (
     <StyledTaskListSection>
       <StyledTaskList>
-        {taskData.map(task => {
+        {tasks.map(task => {
           return <Task key={task.id} task={task} />;
         })}
       </StyledTaskList>
