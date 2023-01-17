@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 import Checkbox from './Checkbox';
+import { StyledInput } from './styles/StyledInput.styled';
 
 const StyledForm = styled.form`
   grid-column: 1 / -1;
@@ -13,24 +14,6 @@ const StyledForm = styled.form`
   border-radius: 0.4rem;
   /* box-shadow: rgba(0, 0, 0, 0.2) 0.8rem 0.4rem 1.2rem; */
   box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
-`;
-
-const StyledInput = styled.input`
-  border: none;
-  display: block;
-  font-family: inherit;
-  font-size: 1.6rem;
-  padding: 0.2rem 0;
-  background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
-  color: ${({ theme }) => theme.color.lightTheme.lightGray};
-
-  &:focus {
-    border: none;
-    outline: none;
-  }
-  &::placeholder {
-    font-weight: 500;
-  }
 `;
 
 const AddTask = ({ onAddTask }) => {
@@ -49,15 +32,9 @@ const AddTask = ({ onAddTask }) => {
         onChange={e => setTaskName(e.target.value)}
         placeholder="Create a new todo..."
         aria-label="Create a new todo..."
+        autoFocus
       />
-      <Button
-        // onClick={() => {
-        //   setTaskName('');
-        // }}
-        type="submit"
-      >
-        Add
-      </Button>
+      <Button type="submit">Add</Button>
     </StyledForm>
   );
 };

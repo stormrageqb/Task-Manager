@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 import Checkbox from './Checkbox';
+import { StyledInput } from './styles/StyledInput.styled';
 
 const StyledTask = styled.div`
   /* display: grid;
@@ -27,11 +29,31 @@ const StyledListItem = styled.li`
 `;
 
 const Task = ({ task }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  let taskContent;
+
+  if (isEditing) {
+    taskContent = (
+      <>
+        <StyledInput editing value={task.text} />
+        <Button onClick={() => setIsEditing(false)}>Save</Button>
+      </>
+    );
+  } else {
+    taskContent = (
+      <>
+        {task.text}
+        <Button onClick={() => setIsEditing(true)}>Edit</Button>
+      </>
+    );
+  }
+
   return (
     <StyledListItem>
       <Checkbox />
-      <label htmlFor="">{task.text}</label>
-      <Button>Edit</Button>
+      {taskContent}
+      {/* <label htmlFor="">{task.text}</label> */}
+      {/* <Button>Edit</Button> */}
     </StyledListItem>
   );
 };

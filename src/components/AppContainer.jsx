@@ -17,6 +17,9 @@ const taskReducer = (tasks, action) => {
         ...tasks,
       ];
     }
+    case 'change-task': {
+      return;
+    }
   }
 };
 
