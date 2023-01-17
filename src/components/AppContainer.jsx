@@ -9,12 +9,12 @@ const taskReducer = (tasks, action) => {
   switch (action.type) {
     case 'add-task': {
       return [
-        ...tasks,
         {
           id: action.id,
           text: action.text,
           complete: false,
         },
+        ...tasks,
       ];
     }
   }

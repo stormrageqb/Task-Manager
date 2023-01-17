@@ -38,8 +38,8 @@ const AddTask = ({ onAddTask }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(taskName);
     onAddTask(taskName);
+    setTaskName('');
   };
   return (
     <StyledForm onSubmit={handleSubmit}>
