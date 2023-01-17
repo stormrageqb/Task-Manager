@@ -8,7 +8,14 @@ import { taskData } from '../taskData';
 const taskReducer = (tasks, action) => {
   switch (action.type) {
     case 'add-task': {
-      return;
+      return [
+        ...tasks,
+        {
+          id: action.id,
+          text: action.text,
+          complete: false,
+        },
+      ];
     }
   }
 };
