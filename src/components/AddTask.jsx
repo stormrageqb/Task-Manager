@@ -33,6 +33,7 @@ const AddTask = ({ task, onAddTask, onChangeTask }) => {
         placeholder="Create a new todo..."
         aria-label="Create a new todo..."
         autoFocus
+        required
       />
       <Button type="submit">Add</Button>
     </StyledForm>

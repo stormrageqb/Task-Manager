@@ -44,6 +44,9 @@ const StyledTaskListFooter = styled.footer`
 `;
 
 const TaskList = ({ onChangeTask, tasks }) => {
+  console.log(tasks);
+  const remainingTasks = tasks.filter(task => !task.complete);
+
   return (
     <StyledTaskListSection>
       <StyledTaskList>
@@ -53,7 +56,10 @@ const TaskList = ({ onChangeTask, tasks }) => {
       </StyledTaskList>
       <StyledTaskListFooter>
         <article>
-          <span>5 items left</span>
+          <span>
+            {remainingTasks.length} item
+            {remainingTasks.length === 1 ? null : 's'} left
+          </span>
           <div>
             <Button footer>All</Button>
             <Button footer>Active</Button>
