@@ -38,10 +38,20 @@ const StyledCheckbox = styled.input`
   }
 `;
 
-const Checkbox = () => {
+const Checkbox = ({ task, onChange }) => {
   return (
     // Add 'checked={task.completed}' later when JS is added
-    <StyledCheckbox type="checkbox" name="checkbox" />
+    <StyledCheckbox
+      checked={task.complete}
+      type="checkbox"
+      name="checkbox"
+      onChange={e => {
+        onChange({
+          ...task,
+          complete: e.target.checked,
+        });
+      }}
+    />
   );
 };
 

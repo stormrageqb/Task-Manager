@@ -16,7 +16,7 @@ const StyledForm = styled.form`
   box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
 `;
 
-const AddTask = ({ onAddTask }) => {
+const AddTask = ({ task, onAddTask, onChangeTask }) => {
   const [taskName, setTaskName] = useState('');
 
   const handleSubmit = e => {
@@ -26,7 +26,7 @@ const AddTask = ({ onAddTask }) => {
   };
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <Checkbox />
+      <Checkbox onChange={onChangeTask} task={task} />
       <StyledInput
         value={taskName}
         onChange={e => setTaskName(e.target.value)}

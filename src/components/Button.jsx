@@ -30,6 +30,11 @@ const Button = styled.button`
     css`
       margin-left: auto;
     `}
+  ${props =>
+    props.save &&
+    css`
+      color: ${({ theme }) => theme.color.primary};
+    `}
 `;
 
 export default Button;

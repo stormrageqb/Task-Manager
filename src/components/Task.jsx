@@ -41,7 +41,10 @@ const Task = ({ onChangeTask, task }) => {
           value={task.text}
           autoFocus
         />
-        <Button onClick={() => setIsEditing(false)}>Save</Button>
+
+        <Button save onClick={() => setIsEditing(false)}>
+          Save
+        </Button>
       </>
     );
   } else {
@@ -55,7 +58,7 @@ const Task = ({ onChangeTask, task }) => {
 
   return (
     <StyledListItem>
-      <Checkbox />
+      <Checkbox task={task} onChange={onChangeTask} />
       {taskContent}
       {/* <label htmlFor="">{task.text}</label> */}
       {/* <Button>Edit</Button> */}

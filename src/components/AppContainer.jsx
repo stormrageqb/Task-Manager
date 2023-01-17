@@ -45,7 +45,11 @@ const AppContainer = () => {
   return (
     <StyledAppContainer>
       <AppHeader />
-      <AddTask onAddTask={handleAddTask} />
+      <AddTask
+        onAddTask={handleAddTask}
+        onChangeTask={handleChangeTask}
+        task={state}
+      />
       <TaskList onChangeTask={handleChangeTask} tasks={state} />
     </StyledAppContainer>
   );
