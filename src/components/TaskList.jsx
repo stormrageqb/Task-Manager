@@ -44,7 +44,6 @@ const StyledTaskListFooter = styled.footer`
 `;
 
 const TaskList = ({ onChangeTask, tasks }) => {
-  console.log(tasks);
   return (
     <StyledTaskListSection>
       <StyledTaskList>

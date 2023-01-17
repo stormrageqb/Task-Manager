@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Button from './Button';
 import Checkbox from './Checkbox';
 import { StyledInput } from './styles/StyledInput.styled';
@@ -21,6 +21,16 @@ const StyledListItem = styled.li`
     border-top-left-radius: 0.4rem;
     border-top-right-radius: 0.4rem;
   }
+`;
+
+const StyledTaskText = styled.span`
+  transition: all 0.2s;
+  ${props =>
+    props.task.complete &&
+    css`
+      text-decoration: line-through;
+      color: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+    `}
 `;
 
 const Task = ({ onChangeTask, task }) => {
@@ -50,7 +60,7 @@ const Task = ({ onChangeTask, task }) => {
   } else {
     taskContent = (
       <>
-        {task.text}
+        <StyledTaskText task={task}>{task.text}</StyledTaskText>
         <Button onClick={() => setIsEditing(true)}>Edit</Button>
       </>
     );
@@ -60,8 +70,6 @@ const Task = ({ onChangeTask, task }) => {
     <StyledListItem>
       <Checkbox task={task} onChange={onChangeTask} />
       {taskContent}
-      {/* <label htmlFor="">{task.text}</label> */}
-      {/* <Button>Edit</Button> */}
     </StyledListItem>
   );
 };
