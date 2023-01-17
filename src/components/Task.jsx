@@ -4,11 +4,6 @@ import Button from './Button';
 import Checkbox from './Checkbox';
 import { StyledInput } from './styles/StyledInput.styled';
 
-const StyledTask = styled.div`
-  /* display: grid;
-  grid-template-columns: 1fr 10fr 2fr; */
-`;
-
 const StyledListItem = styled.li`
   font-size: 1.6rem;
   color: ${({ theme }) => theme.color.lightTheme.lightGray};
@@ -28,14 +23,23 @@ const StyledListItem = styled.li`
   }
 `;
 
-const Task = ({ task }) => {
+const Task = ({ onChangeTask, task }) => {
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
 
   if (isEditing) {
     taskContent = (
       <>
-        <StyledInput editing value={task.text} />
+        <StyledInput
+          onChange={e => {
+            onChangeTask({
+              ...task,
+              text: e.target.value,
+            });
+          }}
+          editing
+          value={task.text}
+        />
         <Button onClick={() => setIsEditing(false)}>Save</Button>
       </>
     );

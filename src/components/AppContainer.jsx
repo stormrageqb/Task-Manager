@@ -18,7 +18,13 @@ const taskReducer = (tasks, action) => {
       ];
     }
     case 'change-task': {
-      return;
+      return tasks.map(task => {
+        if (task.id === action.task.id) {
+          return action.task;
+        } else {
+          return task;
+        }
+      });
     }
   }
 };
@@ -32,11 +38,15 @@ const AppContainer = () => {
     dispatch({ type: 'add-task', id: crypto.randomUUID(), text: text });
   };
 
+  const handleChangeTask = task => {
+    dispatch({ type: 'change-task', task: task });
+  };
+
   return (
     <StyledAppContainer>
       <AppHeader />
       <AddTask onAddTask={handleAddTask} />
-      <TaskList tasks={state} />
+      <TaskList onChangeTask={handleChangeTask} tasks={state} />
     </StyledAppContainer>
   );
 };

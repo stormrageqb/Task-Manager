@@ -43,13 +43,13 @@ const StyledTaskListFooter = styled.footer`
   }
 `;
 
-const TaskList = ({ tasks }) => {
+const TaskList = ({ onChangeTask, tasks }) => {
   console.log(tasks);
   return (
     <StyledTaskListSection>
       <StyledTaskList>
         {tasks.map(task => {
-          return <Task key={task.id} task={task} />;
+          return <Task onChangeTask={onChangeTask} key={task.id} task={task} />;
         })}
       </StyledTaskList>
       <StyledTaskListFooter>
