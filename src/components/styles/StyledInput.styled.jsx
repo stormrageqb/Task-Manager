@@ -12,6 +12,14 @@ export const StyledInput = styled.input`
   &:focus {
     border: none;
     outline: none;
+
+    ${props =>
+      props.editing &&
+      css`
+        border-bottom: 0.1rem solid
+          ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
+        margin-bottom: -0.1rem;
+      `}
   }
   &::placeholder {
     font-weight: 500;

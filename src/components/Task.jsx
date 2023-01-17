@@ -39,6 +39,7 @@ const Task = ({ onChangeTask, task }) => {
           }}
           editing
           value={task.text}
+          autoFocus
         />
         <Button onClick={() => setIsEditing(false)}>Save</Button>
       </>
