@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import styled, { css } from 'styled-components';
+import { CONSTANTS } from '../constants';
 import Button from './Button';
 import Checkbox from './Checkbox';
 import { StyledInput } from './styles/StyledInput.styled';
-const maximumCharacterValue = 45;
+
 const StyledForm = styled.form`
   grid-column: 1 / -1;
   display: grid;
@@ -43,7 +44,7 @@ const AddTask = ({ task, onAddTask, onChangeTask }) => {
   };
 
   const handleTaskNameChange = e => {
-    if (e.target.value.length <= maximumCharacterValue) {
+    if (e.target.value.length <= CONSTANTS.maximumCharacters) {
       setTaskName(e.target.value);
     }
   };
@@ -51,11 +52,11 @@ const AddTask = ({ task, onAddTask, onChangeTask }) => {
     <StyledForm onSubmit={handleSubmit}>
       {/* <Checkbox onChange={onChangeTask} task={task} /> */}
       <StyledCharacterCounter>
-        {maximumCharacterValue - taskName.length}
+        {CONSTANTS.maximumCharacters - taskName.length}
       </StyledCharacterCounter>
       <StyledInput
         value={taskName}
-        maxLength={maximumCharacterValue}
+        maxLength={CONSTANTS.maximumCharacters}
         // onChange={e => setTaskName(e.target.value)}
         onChange={handleTaskNameChange}
         placeholder="Create a new todo..."
