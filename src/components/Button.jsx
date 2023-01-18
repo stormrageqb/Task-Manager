@@ -49,6 +49,26 @@ const Button = styled.button`
         color: ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
       }
     `}
+    ${props =>
+    props.modalFooter &&
+    css`
+      place-self: center;
+      font-size: 1.8rem;
+      height: 100%;
+      width: 100%;
+      padding: 2.4rem 0;
+
+      &:hover {
+        background-color: ${({ theme }) =>
+          theme.color.darkTheme.darkerGrayBlue};
+      }
+    `}
+    ${props =>
+    props.modalFooterRight &&
+    css`
+      border-left: 0.1rem solid
+        ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+    `}
 `;
 
 export default Button;

@@ -31,6 +31,7 @@ const StyledModalHeader = styled.header`
   );
   padding: 2.4rem;
   text-align: center;
+  width: 100%;
 `;
 
 const StyledModalSection = styled.section`
@@ -39,6 +40,8 @@ const StyledModalSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
+
   & h2 {
     font-size: 3.2rem;
   }
@@ -56,11 +59,12 @@ const StyledModalFooter = styled.footer`
   grid-template-columns: 1fr 1fr;
   grid-column: 1 / -1;
   background-color: ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
-  padding: 2.4rem;
+  /* padding: 2.4rem 0; */
   border-top: 0.1rem solid
     ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
+  width: 100%;
 `;
 
 const ModalOverlay = () => {
@@ -78,8 +82,10 @@ const ModalOverlay = () => {
         </p>
       </StyledModalSection>
       <StyledModalFooter>
-        <Button>Delete</Button>
-        <Button>Cancel</Button>
+        <Button modalFooter>Delete</Button>
+        <Button modalFooter modalFooterRight>
+          Cancel
+        </Button>
       </StyledModalFooter>
     </StyledModalContainer>
   );
