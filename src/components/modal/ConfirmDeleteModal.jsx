@@ -1,11 +1,7 @@
-import { ReactDOM } from 'react';
+import ReactDOM from 'react-dom';
 import { Fragment } from 'react';
-import styled from 'styled-components';
 import ModalBackdrop from './ModalBackdrop';
-
-const StyledModalHeader = styled.header``;
-
-const StyledConfirmDeleteModal = styled.div``;
+import ModalOverlay from './ModalOverlay';
 
 const ConfirmDeleteModal = () => {
   return (
