@@ -4,10 +4,11 @@ import TaskList from './TaskList';
 import AppHeader from './AppHeader';
 import { StyledAppContainer } from './styles/StyledAppContainer.styled';
 import { taskData } from '../taskData';
+import { CONSTANTS } from '../constants';
 
 const taskReducer = (tasks, action) => {
   switch (action.type) {
-    case 'add-task': {
+    case CONSTANTS.ACTIONS.ADD_TASK: {
       return [
         {
           id: action.id,
@@ -17,7 +18,10 @@ const taskReducer = (tasks, action) => {
         ...tasks,
       ];
     }
-    case 'change-task': {
+    case CONSTANTS.ACTIONS.DELETE_TASK: {
+      return tasks.filter(task => task.id !== action.id);
+    }
+    case CONSTANTS.ACTIONS.CHANGE_TASK: {
       return tasks.map(task => {
         if (task.id === action.task.id) {
           return action.task;
@@ -25,6 +29,9 @@ const taskReducer = (tasks, action) => {
           return task;
         }
       });
+    }
+    default: {
+      throw Error('Action unknown: ' + action.type);
     }
   }
 };
@@ -35,11 +42,15 @@ const AppContainer = () => {
   const [state, dispatch] = useReducer(taskReducer, initialState);
 
   const handleAddTask = text => {
-    dispatch({ type: 'add-task', id: crypto.randomUUID(), text: text });
+    dispatch({
+      type: CONSTANTS.ACTIONS.ADD_TASK,
+      id: crypto.randomUUID(),
+      text: text,
+    });
   };
 
   const handleChangeTask = task => {
-    dispatch({ type: 'change-task', task: task });
+    dispatch({ type: CONSTANTS.ACTIONS.CHANGE_TASK, task: task });
   };
 
   return (

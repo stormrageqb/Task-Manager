@@ -44,7 +44,7 @@ const AddTask = ({ task, onAddTask, onChangeTask }) => {
   };
 
   const handleTaskNameChange = e => {
-    if (e.target.value.length <= CONSTANTS.maximumCharacters) {
+    if (e.target.value.length <= CONSTANTS.MAXIMUM_CHARACTERS) {
       setTaskName(e.target.value);
     }
   };
@@ -52,11 +52,11 @@ const AddTask = ({ task, onAddTask, onChangeTask }) => {
     <StyledForm onSubmit={handleSubmit}>
       {/* <Checkbox onChange={onChangeTask} task={task} /> */}
       <StyledCharacterCounter>
-        {CONSTANTS.maximumCharacters - taskName.length}
+        {CONSTANTS.MAXIMUM_CHARACTERS - taskName.length}
       </StyledCharacterCounter>
       <StyledInput
         value={taskName}
-        maxLength={CONSTANTS.maximumCharacters}
+        maxLength={CONSTANTS.MAXIMUM_CHARACTERS}
         // onChange={e => setTaskName(e.target.value)}
         onChange={handleTaskNameChange}
         placeholder="Create a new todo..."
