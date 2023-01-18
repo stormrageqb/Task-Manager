@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled, { css } from 'styled-components';
 import Button from './Button';
 import Checkbox from './Checkbox';
+import ConfirmDeleteModal from './modal/ConfirmDeleteModal';
 import { StyledInput } from './styles/StyledInput.styled';
 
 import TrashIcon from '/src/assets/icon-trash.svg';
@@ -54,6 +55,8 @@ const StyledTaskText = styled.span`
 
 const Task = ({ onDeleteTask, onChangeTask, task }) => {
   const [isEditing, setIsEditing] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
   let taskContent;
 
   if (isEditing) {
@@ -86,12 +89,17 @@ const Task = ({ onDeleteTask, onChangeTask, task }) => {
   }
 
   return (
-    <StyledListItem>
-      <Checkbox task={task} onChange={onChangeTask} />
-      {taskContent}
+    <>
+      {showModal && <ConfirmDeleteModal />}
 
-      <StyledTrashIcon onClick={() => onDeleteTask(task.id)} />
-    </StyledListItem>
+      <StyledListItem>
+        <Checkbox task={task} onChange={onChangeTask} />
+        {taskContent}
+
+        {/* <StyledTrashIcon onClick={() => onDeleteTask(task.id)} /> */}
+        <StyledTrashIcon onClick={() => setShowModal(true)} />
+      </StyledListItem>
+    </>
   );
 };
 
