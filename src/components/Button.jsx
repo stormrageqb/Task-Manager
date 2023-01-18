@@ -4,14 +4,15 @@ const Button = styled.button`
   color: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
   display: inline-block;
   border: none;
-  font-size: 1rem;
-  padding: 0.2rem 0.2rem;
+  font-size: 1.1rem;
+  /* padding: 0.2rem 0.2rem; */
   background-color: transparent;
   font-family: inherit;
   cursor: pointer;
   transition: all 0.2s;
   width: fit-content;
-  place-self: center;
+  align-self: center;
+  justify-self: flex-end;
   text-transform: capitalize;
   &:hover {
     color: ${({ theme }) => theme.color.primary};
@@ -22,7 +23,6 @@ const Button = styled.button`
     css`
       place-self: initial;
       padding: 0;
-      font-size: 1.1rem;
     `}
 
   ${props =>

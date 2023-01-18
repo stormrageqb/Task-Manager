@@ -49,6 +49,10 @@ const AppContainer = () => {
     });
   };
 
+  const handleDeleteTask = taskId => {
+    dispatch({ type: CONSTANTS.ACTIONS.DELETE_TASK, id: taskId });
+  };
+
   const handleChangeTask = task => {
     dispatch({ type: CONSTANTS.ACTIONS.CHANGE_TASK, task: task });
   };
@@ -61,7 +65,11 @@ const AppContainer = () => {
         onChangeTask={handleChangeTask}
         task={state}
       />
-      <TaskList onChangeTask={handleChangeTask} tasks={state} />
+      <TaskList
+        onDeleteTask={handleDeleteTask}
+        onChangeTask={handleChangeTask}
+        tasks={state}
+      />
     </StyledAppContainer>
   );
 };
