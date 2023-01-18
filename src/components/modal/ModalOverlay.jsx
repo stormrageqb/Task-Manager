@@ -1,35 +1,85 @@
 import styled from 'styled-components';
+import Button from '../Button';
 import { StyledTrashIcon } from '../styles/StyledTrashIcon';
 
 const StyledModalContainer = styled.div`
   position: fixed;
+  width: 45%;
+  max-width: 100%;
+  max-height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10000;
   /* height: 50rem; */
-
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: blue;
+  /* border-radius: 0.4rem; */
+  /* background-color: blue; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
 `;
 
 const StyledModalHeader = styled.header`
-  height: 40%;
-  width: 100%;
-  background-color: linear-gradient(
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+
+  grid-column: 1 / -1;
+  background-image: linear-gradient(
     to right,
-    ${({ theme }) => theme.color.trueGradient[0]},
-    ${({ theme }) => theme.color.trueGradient[1]}
+    ${({ theme }) => theme.color.modalGradient[0]},
+    ${({ theme }) => theme.color.modalGradient[1]}
   );
+  padding: 2.4rem;
+  text-align: center;
+`;
+
+const StyledModalSection = styled.section`
+  grid-column: 1 / -1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  & h2 {
+    font-size: 3.2rem;
+  }
+
+  & p {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  background-color: ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
+  padding: 2.4rem;
+`;
+
+const StyledModalFooter = styled.footer`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 1 / -1;
+  background-color: ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
+  padding: 2.4rem;
+  border-top: 0.1rem solid
+    ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
 `;
 
 const ModalOverlay = () => {
   return (
     <StyledModalContainer>
       <StyledModalHeader>
-        <StyledTrashIcon />
+        <StyledTrashIcon modal />
       </StyledModalHeader>
+      <StyledModalSection>
+        <h2>Delete?</h2>
+        <p>Are you sure you want to delete this task?</p>
+        <p>
+          This action is <strong>irreversible.</strong>
+        </p>
+      </StyledModalSection>
+      <StyledModalFooter>
+        <Button>Delete</Button>
+        <Button>Cancel</Button>
+      </StyledModalFooter>
     </StyledModalContainer>
   );
 };

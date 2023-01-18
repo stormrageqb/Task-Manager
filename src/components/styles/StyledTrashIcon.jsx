@@ -1,5 +1,5 @@
 import TrashIcon from '/src/assets/icon-trash.svg';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledTrashIcon = styled(TrashIcon)`
   height: 1.4rem;
@@ -16,4 +16,15 @@ export const StyledTrashIcon = styled(TrashIcon)`
   &:hover {
     fill: ${({ theme }) => theme.color.secondary};
   }
+
+  ${props =>
+    props.modal &&
+    css`
+      height: 8.4rem;
+      width: 8.4rem;
+      fill: ${({ theme }) => theme.color.primary};
+      background-color: ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
+      border-radius: 50%;
+      padding: 1rem;
+    `}
 `;

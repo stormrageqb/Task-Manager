@@ -11,6 +11,7 @@ const theme = {
     primary: '#3a7bfd',
     secondary: '#c058f3',
     trueGradient: ['rgba(87, 221, 255, 0.2)', 'rgba(192, 88, 243, 0.2)'],
+    modalGradient: ['rgba(87, 221, 255)', 'rgba(192, 88, 243)'],
 
     lightTheme: {
       lightGray: '#fafafa',
