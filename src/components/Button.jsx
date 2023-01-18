@@ -35,6 +35,20 @@ const Button = styled.button`
     css`
       color: ${({ theme }) => theme.color.primary};
     `}
+  ${props =>
+    props.xModal &&
+    css`
+      position: absolute;
+      z-index: 10;
+      top: 1rem;
+      right: 2rem;
+      font-size: 2.4rem;
+      color: ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
+
+      &:hover {
+        color: ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+      }
+    `}
 `;
 
 export default Button;

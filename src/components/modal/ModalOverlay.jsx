@@ -67,6 +67,7 @@ const ModalOverlay = () => {
   return (
     <StyledModalContainer>
       <StyledModalHeader>
+        <Button xModal>&#10006;</Button>
         <StyledTrashIcon modal />
       </StyledModalHeader>
       <StyledModalSection>

@@ -8,7 +8,7 @@ const StyledBackdrop = styled.div`
   height: 100vh;
   z-index: 1000;
   background-color: transparent;
-  backdrop-filter: blur(0.2rem);
+  backdrop-filter: blur(0.2rem) brightness(90%);
 `;
 
 const ModalBackdrop = () => {
