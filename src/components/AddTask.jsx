@@ -22,6 +22,15 @@ const StyledCharacterCounter = styled.span`
   background-color: transparent;
   margin-left: 0.3rem;
   color: ${({ theme }) => theme.color.lightTheme.darkGrayBlue};
+
+  color: ${({ children, theme }) => {
+    if (children < 1) {
+      // TEMP COLOR
+      return 'firebrick';
+    } else {
+      return theme.color.lightTheme.darkGrayBlue;
+    }
+  }};
 `;
 
 const AddTask = ({ task, onAddTask, onChangeTask }) => {
@@ -41,11 +50,12 @@ const AddTask = ({ task, onAddTask, onChangeTask }) => {
   return (
     <StyledForm onSubmit={handleSubmit}>
       {/* <Checkbox onChange={onChangeTask} task={task} /> */}
-      <StyledCharacterCounter maximum={maximumCharacterValue}>
+      <StyledCharacterCounter>
         {maximumCharacterValue - taskName.length}
       </StyledCharacterCounter>
       <StyledInput
         value={taskName}
+        maxLength={maximumCharacterValue}
         // onChange={e => setTaskName(e.target.value)}
         onChange={handleTaskNameChange}
         placeholder="Create a new todo..."
