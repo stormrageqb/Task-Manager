@@ -52,7 +52,7 @@ const StyledTaskText = styled.span`
     `}
 `;
 
-const Task = ({ onChangeTask, task }) => {
+const Task = ({ onDeleteTask, onChangeTask, task }) => {
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
 
@@ -90,7 +90,7 @@ const Task = ({ onChangeTask, task }) => {
       <Checkbox task={task} onChange={onChangeTask} />
       {taskContent}
 
-      <StyledTrashIcon />
+      <StyledTrashIcon onClick={() => onDeleteTask(task.id)} />
     </StyledListItem>
   );
 };

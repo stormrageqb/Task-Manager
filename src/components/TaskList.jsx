@@ -43,7 +43,7 @@ const StyledTaskListFooter = styled.footer`
   }
 `;
 
-const TaskList = ({ onChangeTask, tasks }) => {
+const TaskList = ({ onDeleteTask, onChangeTask, tasks }) => {
   console.log(tasks);
   const remainingTasks = tasks.filter(task => !task.complete);
 
@@ -51,7 +51,14 @@ const TaskList = ({ onChangeTask, tasks }) => {
     <StyledTaskListSection>
       <StyledTaskList>
         {tasks.map(task => {
-          return <Task onChangeTask={onChangeTask} key={task.id} task={task} />;
+          return (
+            <Task
+              onDeleteTask={onDeleteTask}
+              onChangeTask={onChangeTask}
+              key={task.id}
+              task={task}
+            />
+          );
         })}
       </StyledTaskList>
       <StyledTaskListFooter>
