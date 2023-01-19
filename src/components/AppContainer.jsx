@@ -21,6 +21,9 @@ const taskReducer = (tasks, action) => {
     case CONSTANTS.ACTIONS.DELETE_TASK: {
       return tasks.filter(task => task.id !== action.id);
     }
+    case 'delete-completed-tasks': {
+      return tasks.filter(task => !task.complete);
+    }
     case CONSTANTS.ACTIONS.CHANGE_TASK: {
       return tasks.map(task => {
         if (task.id === action.task.id) {
@@ -51,6 +54,10 @@ const AppContainer = () => {
 
   const handleDeleteTask = taskId => {
     dispatch({ type: CONSTANTS.ACTIONS.DELETE_TASK, id: taskId });
+  };
+
+  const handleDeleteCompletedTasks = () => {
+    dispatch({ type: 'delete-completed-tasks' });
   };
 
   const handleChangeTask = task => {
