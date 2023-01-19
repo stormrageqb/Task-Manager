@@ -1,7 +1,10 @@
 import TrashIcon from '/src/assets/icon-trash.svg';
 import styled, { css } from 'styled-components';
 
-export const StyledTrashIcon = styled(TrashIcon)`
+// Transient props syntax
+// const StyledIcon = styled(({ ...props }) => <TrashIcon {...props} />)`
+
+const StyledIcon = styled(TrashIcon)`
   height: 1.4rem;
   display: inline-block;
   background-color: transparent;
@@ -28,3 +31,11 @@ export const StyledTrashIcon = styled(TrashIcon)`
       padding: 1rem;
     `}
 `;
+
+export const StyledTrashIcon = ({ ...props }) => {
+  return (
+    <div>
+      <StyledIcon />
+    </div>
+  );
+};

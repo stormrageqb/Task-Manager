@@ -78,7 +78,11 @@ const Task = ({ onDeleteTask, onChangeTask, task }) => {
         {taskContent}
 
         {/* <StyledTrashIcon onClick={() => onDeleteTask(task.id)} /> */}
-        <StyledTrashIcon onClick={() => setShowModal(true)} />
+
+        {/* MARK FOR TOMORROW! -Added div works, but interferes with styling in various places. */}
+        <div onClick={() => setShowModal(true)}>
+          <StyledTrashIcon />
+        </div>
       </StyledListItem>
     </>
   );
