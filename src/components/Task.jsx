@@ -4,7 +4,7 @@ import Button from './Button';
 import Checkbox from './Checkbox';
 import ConfirmDeleteModal from './modal/ConfirmDeleteModal';
 import { StyledInput } from './styles/StyledInput.styled';
-import { StyledTrashIcon } from './styles/StyledTrashIcon';
+import StyledTrashIcon from './styles/StyledTrashIcon';
 
 const StyledListItem = styled.li`
   font-size: 1.6rem;
@@ -80,9 +80,12 @@ const Task = ({ onDeleteTask, onChangeTask, task }) => {
         {/* <StyledTrashIcon onClick={() => onDeleteTask(task.id)} /> */}
 
         {/* MARK FOR TOMORROW! -Added div works, but interferes with styling in various places. */}
-        <div onClick={() => setShowModal(true)}>
+        {/* <Button onClick={() => setShowModal(true)}> */}
+        {/* <StyledTrashIconButton /> */}
+        {/* </Button> */}
+        <Button onClick={() => setShowModal(true)}>
           <StyledTrashIcon />
-        </div>
+        </Button>
       </StyledListItem>
     </>
   );

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Button from '../Button';
-import { StyledTrashIcon } from '../styles/StyledTrashIcon';
+import StyledTrashIcon from '../styles/StyledTrashIcon';
 
 const StyledModalContainer = styled.div`
   position: fixed;
@@ -74,7 +74,8 @@ const ModalOverlay = ({ setShowModal }) => {
         <Button xModal onClick={() => setShowModal(false)}>
           &#10006;
         </Button>
-        <StyledTrashIcon modal />
+        {/* Transient props set for this icon set to true to fix bug */}
+        <StyledTrashIcon modal="true" />
       </StyledModalHeader>
       <StyledModalSection>
         <h2>Delete?</h2>
