@@ -43,7 +43,12 @@ const StyledTaskListFooter = styled.footer`
   }
 `;
 
-const TaskList = ({ onDeleteTask, onChangeTask, tasks }) => {
+const TaskList = ({
+  onDeleteTask,
+  onDeleteCompletedTasks,
+  onChangeTask,
+  tasks,
+}) => {
   console.log(tasks);
   const remainingTasks = tasks.filter(task => !task.complete);
 
@@ -72,7 +77,7 @@ const TaskList = ({ onDeleteTask, onChangeTask, tasks }) => {
             <Button footer>Active</Button>
             <Button footer>Completed</Button>
           </div>
-          <Button footer lastChild>
+          <Button footer lastChild onClick={() => onDeleteCompletedTasks()}>
             Clear completed
           </Button>
         </article>

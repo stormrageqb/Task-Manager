@@ -74,6 +74,7 @@ const AppContainer = () => {
       />
       <TaskList
         onDeleteTask={handleDeleteTask}
+        onDeleteCompletedTasks={handleDeleteCompletedTasks}
         onChangeTask={handleChangeTask}
         tasks={state}
       />
