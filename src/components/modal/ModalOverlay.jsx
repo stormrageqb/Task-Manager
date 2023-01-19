@@ -67,11 +67,13 @@ const StyledModalFooter = styled.footer`
   width: 100%;
 `;
 
-const ModalOverlay = () => {
+const ModalOverlay = ({ setShowModal }) => {
   return (
     <StyledModalContainer>
       <StyledModalHeader>
-        <Button xModal>&#10006;</Button>
+        <Button xModal onClick={() => setShowModal(false)}>
+          &#10006;
+        </Button>
         <StyledTrashIcon modal />
       </StyledModalHeader>
       <StyledModalSection>
@@ -83,7 +85,11 @@ const ModalOverlay = () => {
       </StyledModalSection>
       <StyledModalFooter>
         <Button modalFooter>Delete</Button>
-        <Button modalFooter modalFooterRight>
+        <Button
+          modalFooter
+          modalFooterRight
+          onClick={() => setShowModal(false)}
+        >
           Cancel
         </Button>
       </StyledModalFooter>

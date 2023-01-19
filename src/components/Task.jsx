@@ -72,7 +72,7 @@ const Task = ({ onDeleteTask, onChangeTask, task }) => {
 
   return (
     <>
-      {showModal && <ConfirmDeleteModal />}
+      {showModal && <ConfirmDeleteModal setShowModal={setShowModal} />}
       <StyledListItem>
         <Checkbox task={task} onChange={onChangeTask} />
         {taskContent}

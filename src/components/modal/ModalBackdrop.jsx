@@ -11,8 +11,8 @@ const StyledBackdrop = styled.div`
   backdrop-filter: blur(0.2rem) brightness(90%);
 `;
 
-const ModalBackdrop = () => {
-  return <StyledBackdrop></StyledBackdrop>;
+const ModalBackdrop = ({ setShowModal }) => {
+  return <StyledBackdrop onClick={() => setShowModal(false)}></StyledBackdrop>;
 };
 
 export default ModalBackdrop;
