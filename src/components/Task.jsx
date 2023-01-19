@@ -72,17 +72,17 @@ const Task = ({ onDeleteTask, onChangeTask, task }) => {
 
   return (
     <>
-      {showModal && <ConfirmDeleteModal setShowModal={setShowModal} />}
+      {showModal && (
+        <ConfirmDeleteModal
+          setShowModal={setShowModal}
+          onDeleteTask={onDeleteTask}
+          task={task}
+        />
+      )}
       <StyledListItem>
         <Checkbox task={task} onChange={onChangeTask} />
         {taskContent}
 
-        {/* <StyledTrashIcon onClick={() => onDeleteTask(task.id)} /> */}
-
-        {/* MARK FOR TOMORROW! -Added div works, but interferes with styling in various places. */}
-        {/* <Button onClick={() => setShowModal(true)}> */}
-        {/* <StyledTrashIconButton /> */}
-        {/* </Button> */}
         <Button onClick={() => setShowModal(true)}>
           <StyledTrashIcon />
         </Button>

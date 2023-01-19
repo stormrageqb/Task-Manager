@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import ModalBackdrop from './ModalBackdrop';
 import ModalOverlay from './ModalOverlay';
 
-const ConfirmDeleteModal = ({ setShowModal }) => {
+const ConfirmDeleteModal = ({ onDeleteTask, setShowModal, task }) => {
   return (
     <Fragment>
       {ReactDOM.createPortal(
@@ -11,7 +11,11 @@ const ConfirmDeleteModal = ({ setShowModal }) => {
         document.getElementById('backdrop-root')
       )}
       {ReactDOM.createPortal(
-        <ModalOverlay setShowModal={setShowModal} />,
+        <ModalOverlay
+          onDeleteTask={onDeleteTask}
+          setShowModal={setShowModal}
+          task={task}
+        />,
         document.getElementById('overlay-root')
       )}
     </Fragment>

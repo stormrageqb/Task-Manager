@@ -39,11 +39,3 @@ const StyledTrashIcon = ({ ...props }) => {
 };
 
 export default StyledTrashIcon;
-
-// export const StyledTrashIcon = ({ ...props }) => {
-//   return <StyledIcon {...props} />;
-// };
-
-// export const StyledTrashIcon = () => {
-//   return <StyledTrashIcon />;
-// };

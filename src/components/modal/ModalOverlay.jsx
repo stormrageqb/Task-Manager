@@ -67,7 +67,7 @@ const StyledModalFooter = styled.footer`
   width: 100%;
 `;
 
-const ModalOverlay = ({ setShowModal }) => {
+const ModalOverlay = ({ onDeleteTask, setShowModal, task }) => {
   return (
     <StyledModalContainer>
       <StyledModalHeader>
@@ -85,7 +85,9 @@ const ModalOverlay = ({ setShowModal }) => {
         </p>
       </StyledModalSection>
       <StyledModalFooter>
-        <Button modalFooter>Delete</Button>
+        <Button modalFooter onClick={() => onDeleteTask(task.id)}>
+          Delete
+        </Button>
         <Button
           modalFooter
           modalFooterRight
