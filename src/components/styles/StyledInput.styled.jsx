@@ -9,26 +9,27 @@ export const StyledInput = styled.input`
   background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
   color: ${({ theme }) => theme.color.lightTheme.lightGray};
 
+  &::placeholder {
+    font-weight: 500;
+  }
+
   &:focus {
     border: none;
     outline: none;
 
     ${props =>
+      // Fixed hack, but consider changing color
       props.editing &&
       css`
-        border-bottom: 0.1rem solid
+        box-shadow: 0 0.1rem 0 0
           ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
-        margin-bottom: -0.1rem;
       `}
-  }
-  &::placeholder {
-    font-weight: 500;
   }
 
   ${props =>
     props.editing &&
     css`
-      /* Note that this is a little bit hacky...there may be a better solution */
-      line-height: 1.34999999999;
+      padding: 0;
+      line-height: 1.6;
     `}
 `;
