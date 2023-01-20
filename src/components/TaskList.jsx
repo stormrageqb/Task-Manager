@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import { taskData } from '../taskData';
 import Button from './Button';
@@ -49,15 +50,19 @@ const TaskList = ({
   onChangeTask,
   tasks,
 }) => {
-  console.log(tasks);
+  const [activeIndex, setActiveIndex] = useState(null);
+
   const remainingTasks = tasks.filter(task => !task.complete);
 
   return (
     <StyledTaskListSection>
       <StyledTaskList>
-        {tasks.map(task => {
+        {tasks.map((task, i) => {
           return (
             <Task
+              isEditing={activeIndex === i}
+              onShow={() => setActiveIndex(i)}
+              onSave={() => setActiveIndex(null)}
               onDeleteTask={onDeleteTask}
               onChangeTask={onChangeTask}
               key={task.id}

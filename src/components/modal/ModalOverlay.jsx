@@ -67,7 +67,8 @@ const StyledModalFooter = styled.footer`
   width: 100%;
 `;
 
-const ModalOverlay = ({ onDeleteTask, setShowModal, task }) => {
+const ModalOverlay = ({ message, onDeleteTask, setShowModal, task }) => {
+  // const { text } = message;
   return (
     <StyledModalContainer>
       <StyledModalHeader>
@@ -80,6 +81,7 @@ const ModalOverlay = ({ onDeleteTask, setShowModal, task }) => {
       <StyledModalSection>
         <h2>Delete?</h2>
         <p>Are you sure you want to delete this task?</p>
+        {/* <p>{text}</p> */}
         <p>
           This action is <strong>irreversible.</strong>
         </p>

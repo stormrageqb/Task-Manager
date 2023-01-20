@@ -35,8 +35,15 @@ const StyledTaskText = styled.span`
     `}
 `;
 
-const Task = ({ onDeleteTask, onChangeTask, task }) => {
-  const [isEditing, setIsEditing] = useState(false);
+const Task = ({
+  isEditing,
+  onShow,
+  onSave,
+  onDeleteTask,
+  onChangeTask,
+  task,
+}) => {
+  // const [isEditing, setIsEditing] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   let taskContent;
@@ -56,7 +63,7 @@ const Task = ({ onDeleteTask, onChangeTask, task }) => {
           autoFocus
         />
 
-        <Button save onClick={() => setIsEditing(false)}>
+        <Button save onClick={onSave}>
           Save
         </Button>
       </>
@@ -65,7 +72,7 @@ const Task = ({ onDeleteTask, onChangeTask, task }) => {
     taskContent = (
       <>
         <StyledTaskText task={task}>{task.text}</StyledTaskText>
-        <Button onClick={() => setIsEditing(true)}>Edit</Button>
+        <Button onClick={onShow}>Edit</Button>
       </>
     );
   }

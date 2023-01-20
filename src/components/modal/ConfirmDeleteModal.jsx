@@ -12,6 +12,7 @@ const ConfirmDeleteModal = ({ onDeleteTask, setShowModal, task }) => {
       )}
       {ReactDOM.createPortal(
         <ModalOverlay
+          // message={deleteMessageData}
           onDeleteTask={onDeleteTask}
           setShowModal={setShowModal}
           task={task}
