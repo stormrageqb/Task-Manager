@@ -5,6 +5,10 @@ import Button from './Button';
 import Checkbox from './Checkbox';
 import Task from './Task';
 import ConfirmDeleteModal from './modal/ConfirmDeleteModal';
+import { CONSTANTS } from '../constants';
+
+const filterNames = Object.keys(CONSTANTS.FILTERS);
+console.log(filterNames);
 
 const StyledTaskListSection = styled.section`
   grid-column: 1 / -1;
@@ -92,11 +96,10 @@ const TaskList = ({
               {remainingTasks.length === 1 ? null : 's'} left
             </span>
             <div>
-              <Button footer>All</Button>
-              <Button footer>Active</Button>
-              <Button footer onClick={() => setCompletedTask(true)}>
-                Completed
-              </Button>
+              {filterNames.map((name, index) => {
+                const categoryName = name.toLowerCase().slice(0).toLowerCase();
+                return <Button key={index}>{categoryName}</Button>;
+              })}
             </div>
 
             <Button
