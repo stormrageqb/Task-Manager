@@ -67,12 +67,56 @@ const StyledModalFooter = styled.footer`
   width: 100%;
 `;
 
-const ModalOverlay = ({ message, onDeleteTask, setShowModal, task }) => {
-  // const { text } = message;
+const ModalOverlay = ({
+  onDeleteCompletedTasks,
+  onDeleteTask,
+  setShowDeleteModal,
+  setShowDeleteCompletedModal,
+  showDeleteCompletedModal,
+  task,
+}) => {
+  const handleDeleteCompletedTasks = () => {
+    onDeleteCompletedTasks();
+    setShowDeleteCompletedModal(false);
+  };
+
+  // Render two 'separate' modals based on which button is clicked in the UI. Note that the callback method does hide the modal after clicking delete in the deleteCompleted modal, which is why I've provided the full function just above.
+  if (showDeleteCompletedModal) {
+    return (
+      <StyledModalContainer>
+        <StyledModalHeader>
+          <Button xModal onClick={() => setShowDeleteCompletedModal(false)}>
+            &#10006;
+          </Button>
+          {/* Transient props set for this icon set to true to fix bug */}
+          <StyledTrashIcon modal="true" />
+        </StyledModalHeader>
+        <StyledModalSection>
+          <h2>Delete?</h2>
+          <p>Are you sure you want to delete all completed tasks?</p>
+          <p>
+            This action is <strong>irreversible.</strong>
+          </p>
+        </StyledModalSection>
+        <StyledModalFooter>
+          <Button modalFooter onClick={handleDeleteCompletedTasks}>
+            Delete
+          </Button>
+          <Button
+            modalFooter
+            modalFooterRight
+            onClick={() => setShowDeleteCompletedModal(false)}
+          >
+            Cancel
+          </Button>
+        </StyledModalFooter>
+      </StyledModalContainer>
+    );
+  }
   return (
     <StyledModalContainer>
       <StyledModalHeader>
-        <Button xModal onClick={() => setShowModal(false)}>
+        <Button xModal onClick={() => setShowDeleteModal(false)}>
           &#10006;
         </Button>
         {/* Transient props set for this icon set to true to fix bug */}
@@ -93,7 +137,7 @@ const ModalOverlay = ({ message, onDeleteTask, setShowModal, task }) => {
         <Button
           modalFooter
           modalFooterRight
-          onClick={() => setShowModal(false)}
+          onClick={() => setShowDeleteModal(false)}
         >
           Cancel
         </Button>

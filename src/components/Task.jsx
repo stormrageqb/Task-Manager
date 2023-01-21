@@ -37,14 +37,15 @@ const StyledTaskText = styled.span`
 
 const Task = ({
   isEditing,
-  onShow,
+  onShowInput,
   onSave,
   onDeleteTask,
   onChangeTask,
   task,
 }) => {
-  // const [isEditing, setIsEditing] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+  // const { showDeleteModal, setShowDeleteModal } = useContext(ModalContext);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   let taskContent;
 
@@ -72,16 +73,16 @@ const Task = ({
     taskContent = (
       <>
         <StyledTaskText task={task}>{task.text}</StyledTaskText>
-        <Button onClick={onShow}>Edit</Button>
+        <Button onClick={onShowInput}>Edit</Button>
       </>
     );
   }
 
   return (
     <>
-      {showModal && (
+      {showDeleteModal && (
         <ConfirmDeleteModal
-          setShowModal={setShowModal}
+          setShowDeleteModal={setShowDeleteModal}
           onDeleteTask={onDeleteTask}
           task={task}
         />
@@ -90,7 +91,7 @@ const Task = ({
         <Checkbox task={task} onChange={onChangeTask} />
         {taskContent}
 
-        <Button onClick={() => setShowModal(true)}>
+        <Button onClick={() => setShowDeleteModal(true)}>
           <StyledTrashIcon />
         </Button>
       </StyledListItem>

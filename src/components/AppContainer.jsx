@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
 import AppHeader from './AppHeader';
@@ -7,6 +7,7 @@ import { taskData } from '../taskData';
 import { CONSTANTS } from '../constants';
 
 const taskReducer = (tasks, action) => {
+  console.log(tasks);
   switch (action.type) {
     case CONSTANTS.ACTIONS.ADD_TASK: {
       return [
@@ -64,6 +65,10 @@ const AppContainer = () => {
     dispatch({ type: CONSTANTS.ACTIONS.CHANGE_TASK, task: task });
   };
 
+  // MODAL CONTEXT
+  // const [showDeleteModal, setShowDeleteModal] = useState(false);
+  // const [showDeleteCompletedModal, setShowDeleteCompletedModal] =
+  useState(false);
   return (
     <StyledAppContainer>
       <AppHeader />
@@ -72,12 +77,21 @@ const AppContainer = () => {
         onChangeTask={handleChangeTask}
         task={state}
       />
+      {/* <ModalContext.Provider
+        value={{
+          showDeleteModal,
+          setShowDeleteModal,
+          showDeleteCompletedModal,
+          setShowDeleteCompletedModal,
+        }}
+      > */}
       <TaskList
         onDeleteTask={handleDeleteTask}
         onDeleteCompletedTasks={handleDeleteCompletedTasks}
         onChangeTask={handleChangeTask}
         tasks={state}
       />
+      {/* </ModalContext.Provider> */}
     </StyledAppContainer>
   );
 };

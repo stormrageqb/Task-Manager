@@ -4,6 +4,7 @@ import { taskData } from '../taskData';
 import Button from './Button';
 import Checkbox from './Checkbox';
 import Task from './Task';
+import ConfirmDeleteModal from './modal/ConfirmDeleteModal';
 
 const StyledTaskListSection = styled.section`
   grid-column: 1 / -1;
@@ -51,43 +52,67 @@ const TaskList = ({
   tasks,
 }) => {
   const [activeIndex, setActiveIndex] = useState(null);
-
   const remainingTasks = tasks.filter(task => !task.complete);
 
+  // MODAL CONTEXT
+  // const { showDeleteCompletedModal, setShowDeleteCompletedModal } =
+  //   useContext(ModalContext);
+
+  const [showDeleteCompletedModal, setShowDeleteCompletedModal] =
+    useState(false);
+
   return (
-    <StyledTaskListSection>
-      <StyledTaskList>
-        {tasks.map((task, i) => {
-          return (
-            <Task
-              isEditing={activeIndex === i}
-              onShow={() => setActiveIndex(i)}
-              onSave={() => setActiveIndex(null)}
-              onDeleteTask={onDeleteTask}
-              onChangeTask={onChangeTask}
-              key={task.id}
-              task={task}
-            />
-          );
-        })}
-      </StyledTaskList>
-      <StyledTaskListFooter>
-        <article>
-          <span>
-            {remainingTasks.length} item
-            {remainingTasks.length === 1 ? null : 's'} left
-          </span>
-          <div>
-            <Button footer>All</Button>
-            <Button footer>Active</Button>
-            <Button footer>Completed</Button>
-          </div>
-          <Button footer lastChild onClick={() => onDeleteCompletedTasks()}>
-            Clear completed
-          </Button>
-        </article>
-      </StyledTaskListFooter>
-    </StyledTaskListSection>
+    <>
+      {showDeleteCompletedModal && (
+        <ConfirmDeleteModal
+          setShowDeleteCompletedModal={setShowDeleteCompletedModal}
+          showDeleteCompletedModal={showDeleteCompletedModal}
+          onDeleteCompletedTasks={onDeleteCompletedTasks}
+          tasks={tasks}
+        />
+      )}
+      <StyledTaskListSection>
+        <StyledTaskList>
+          {tasks.map((task, i) => {
+            return (
+              <Task
+                isEditing={activeIndex === i}
+                onShowInput={() => setActiveIndex(i)}
+                onSave={() => setActiveIndex()}
+                onDeleteTask={onDeleteTask}
+                onChangeTask={onChangeTask}
+                task={task}
+                key={task.id}
+              />
+            );
+          })}
+        </StyledTaskList>
+        <StyledTaskListFooter>
+          <article>
+            <span>
+              {remainingTasks.length} item
+              {remainingTasks.length === 1 ? null : 's'} left
+            </span>
+            <div>
+              <Button footer>All</Button>
+              <Button footer>Active</Button>
+              <Button footer>Completed</Button>
+            </div>
+
+            <Button
+              footer
+              lastChild
+              onClick={() => setShowDeleteCompletedModal(true)}
+            >
+              Clear completed
+            </Button>
+            {/* <Button footer lastChild onClick={() => onDeleteCompletedTasks()}>
+              Clear completed
+            </Button> */}
+          </article>
+        </StyledTaskListFooter>
+      </StyledTaskListSection>
+    </>
   );
 };
 

@@ -11,8 +11,21 @@ const StyledBackdrop = styled.div`
   backdrop-filter: blur(0.2rem) brightness(90%);
 `;
 
-const ModalBackdrop = ({ setShowModal }) => {
-  return <StyledBackdrop onClick={() => setShowModal(false)}></StyledBackdrop>;
+const ModalBackdrop = ({
+  setShowDeleteModal,
+  showDeleteCompletedModal,
+  setShowDeleteCompletedModal,
+}) => {
+  if (showDeleteCompletedModal) {
+    return (
+      <StyledBackdrop
+        onClick={() => setShowDeleteCompletedModal(false)}
+      ></StyledBackdrop>
+    );
+  }
+  return (
+    <StyledBackdrop onClick={() => setShowDeleteModal(false)}></StyledBackdrop>
+  );
 };
 
 export default ModalBackdrop;

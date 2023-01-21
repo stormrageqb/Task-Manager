@@ -3,19 +3,36 @@ import { Fragment } from 'react';
 import ModalBackdrop from './ModalBackdrop';
 import ModalOverlay from './ModalOverlay';
 
-const ConfirmDeleteModal = ({ onDeleteTask, setShowModal, task }) => {
+const ConfirmDeleteModal = ({
+  onDeleteTask,
+  onDeleteCompletedTasks,
+  setShowDeleteModal,
+  showDeleteCompletedModal,
+  setShowDeleteCompletedModal,
+  onShowModal,
+  task,
+  tasks,
+}) => {
   return (
     <Fragment>
       {ReactDOM.createPortal(
-        <ModalBackdrop setShowModal={setShowModal} />,
+        <ModalBackdrop
+          showDeleteCompletedModal={showDeleteCompletedModal}
+          setShowDeleteCompletedModal={setShowDeleteCompletedModal}
+          setShowDeleteModal={setShowDeleteModal}
+        />,
         document.getElementById('backdrop-root')
       )}
       {ReactDOM.createPortal(
         <ModalOverlay
-          // message={deleteMessageData}
+          setShowDeleteCompletedModal={setShowDeleteCompletedModal}
+          showDeleteCompletedModal={showDeleteCompletedModal}
+          onShowModal={onShowModal}
           onDeleteTask={onDeleteTask}
-          setShowModal={setShowModal}
+          onDeleteCompletedTasks={onDeleteCompletedTasks}
+          setShowDeleteModal={setShowDeleteModal}
           task={task}
+          tasks={tasks}
         />,
         document.getElementById('overlay-root')
       )}
