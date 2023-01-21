@@ -6,4 +6,9 @@ export const CONSTANTS = {
     DELETE_COMPLETED_TASKS: 'delete-completed-tasks',
     CHANGE_TASK: 'change-task',
   },
+  FILTERS: {
+    ALL: () => true,
+    ACTIVE: task => !task.complete,
+    COMPLETED: task => task.complete,
+  },
 };
