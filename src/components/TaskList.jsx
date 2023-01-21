@@ -68,7 +68,6 @@ const TaskList = ({
           setShowDeleteCompletedModal={setShowDeleteCompletedModal}
           showDeleteCompletedModal={showDeleteCompletedModal}
           onDeleteCompletedTasks={onDeleteCompletedTasks}
-          tasks={tasks}
         />
       )}
       <StyledTaskListSection>

@@ -9,9 +9,7 @@ const ConfirmDeleteModal = ({
   setShowDeleteModal,
   showDeleteCompletedModal,
   setShowDeleteCompletedModal,
-  onShowModal,
   task,
-  tasks,
 }) => {
   return (
     <Fragment>
@@ -27,12 +25,10 @@ const ConfirmDeleteModal = ({
         <ModalOverlay
           setShowDeleteCompletedModal={setShowDeleteCompletedModal}
           showDeleteCompletedModal={showDeleteCompletedModal}
-          onShowModal={onShowModal}
           onDeleteTask={onDeleteTask}
           onDeleteCompletedTasks={onDeleteCompletedTasks}
           setShowDeleteModal={setShowDeleteModal}
           task={task}
-          tasks={tasks}
         />,
         document.getElementById('overlay-root')
       )}
