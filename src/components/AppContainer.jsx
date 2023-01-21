@@ -22,7 +22,7 @@ const taskReducer = (tasks, action) => {
     case CONSTANTS.ACTIONS.DELETE_TASK: {
       return tasks.filter(task => task.id !== action.id);
     }
-    case 'delete-completed-tasks': {
+    case CONSTANTS.ACTIONS.DELETE_COMPLETED_TASKS: {
       return tasks.filter(task => !task.complete);
     }
     case CONSTANTS.ACTIONS.CHANGE_TASK: {

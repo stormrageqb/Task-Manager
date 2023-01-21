@@ -53,13 +53,12 @@ const TaskList = ({
 }) => {
   const [activeIndex, setActiveIndex] = useState(null);
   const remainingTasks = tasks.filter(task => !task.complete);
+  const [showDeleteCompletedModal, setShowDeleteCompletedModal] =
+    useState(false);
 
   // MODAL CONTEXT
   // const { showDeleteCompletedModal, setShowDeleteCompletedModal } =
   //   useContext(ModalContext);
-
-  const [showDeleteCompletedModal, setShowDeleteCompletedModal] =
-    useState(false);
 
   return (
     <>
@@ -95,7 +94,9 @@ const TaskList = ({
             <div>
               <Button footer>All</Button>
               <Button footer>Active</Button>
-              <Button footer>Completed</Button>
+              <Button footer onClick={() => setCompletedTask(true)}>
+                Completed
+              </Button>
             </div>
 
             <Button
