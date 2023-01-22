@@ -68,7 +68,14 @@ const Button = styled.button`
       }
     `}
     ${props =>
-    props.modalFooterRight &&
+    props.modalDelete &&
+    css`
+      &:hover {
+        color: ${({ theme }) => theme.color.secondary};
+      }
+    `}
+    ${props =>
+    props.modalCancel &&
     css`
       border-left: 0.1rem solid
         ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};

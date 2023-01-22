@@ -34,7 +34,7 @@ const StyledIcon = styled(TrashIcon)`
     css`
       height: 8.4rem;
       width: 8.4rem;
-      fill: ${({ theme }) => theme.color.primary};
+      fill: ${({ theme }) => theme.color.secondary};
       background-color: ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
       border-radius: 50%;
       padding: 1rem;

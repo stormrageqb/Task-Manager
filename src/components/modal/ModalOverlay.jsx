@@ -33,6 +33,7 @@ const StyledModalHeader = styled.header`
   text-align: center;
   width: 100%;
 
+  /* For Checkmark within trash icon */
   & div {
     position: relative;
 
@@ -41,8 +42,8 @@ const StyledModalHeader = styled.header`
       top: 3.4rem;
       left: 25.5rem;
       appearance: none;
-      background-color: #fff;
-      outline: 0.13rem solid
+      background-color: ${({ theme }) => theme.color.primary};
+      outline: 0.15rem solid
         ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
 
       font: inherit;
@@ -59,7 +60,7 @@ const StyledModalHeader = styled.header`
         width: 1rem;
         height: 1rem;
         clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 14%, 80% 0%, 43% 62%);
-        box-shadow: inset 1rem 1rem ${({ theme }) => theme.color.primary};
+        box-shadow: inset 1rem 1rem #fff;
       }
     }
   }
@@ -133,12 +134,12 @@ const ModalOverlay = ({
           </p>
         </StyledModalSection>
         <StyledModalFooter>
-          <Button modalFooter onClick={handleDeleteCompletedTasks}>
+          <Button modalDelete modalFooter onClick={handleDeleteCompletedTasks}>
             Delete
           </Button>
           <Button
+            modalCancel
             modalFooter
-            modalFooterRight
             onClick={() => setShowDeleteCompletedModal(false)}
           >
             Cancel
@@ -164,12 +165,12 @@ const ModalOverlay = ({
         </p>
       </StyledModalSection>
       <StyledModalFooter>
-        <Button modalFooter onClick={() => onDeleteTask(task.id)}>
+        <Button modalDelete modalFooter onClick={() => onDeleteTask(task.id)}>
           Delete
         </Button>
         <Button
+          modalCancel
           modalFooter
-          modalFooterRight
           onClick={() => setShowDeleteModal(false)}
         >
           Cancel
