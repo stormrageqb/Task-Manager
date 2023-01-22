@@ -59,6 +59,7 @@ const TaskList = ({
   const remainingTasks = tasks.filter(task => !task.complete);
   const [showDeleteCompletedModal, setShowDeleteCompletedModal] =
     useState(false);
+  const [filter, setFilter] = useState('All');
 
   // MODAL CONTEXT
   // const { showDeleteCompletedModal, setShowDeleteCompletedModal } =
@@ -75,7 +76,8 @@ const TaskList = ({
       )}
       <StyledTaskListSection>
         <StyledTaskList>
-          {tasks.map((task, i) => {
+          {/* Filters through the values found in CONSTANTS which correspond to the dynamic value of filter from useState */}
+          {tasks.filter(CONSTANTS.FILTERS[filter]).map((task, i) => {
             return (
               <Task
                 isEditing={activeIndex === i}
@@ -96,9 +98,17 @@ const TaskList = ({
               {remainingTasks.length === 1 ? null : 's'} left
             </span>
             <div>
-              {filterNames.map((name, index) => {
-                const categoryName = name.toLowerCase().slice(0).toLowerCase();
-                return <Button key={index}>{categoryName}</Button>;
+              {filterNames.map(name => {
+                return (
+                  <Button
+                    name={name}
+                    aria-pressed={name === filter}
+                    key={name}
+                    onClick={() => setFilter(name)}
+                  >
+                    {name}
+                  </Button>
+                );
               })}
             </div>
 
@@ -109,9 +119,6 @@ const TaskList = ({
             >
               Clear completed
             </Button>
-            {/* <Button footer lastChild onClick={() => onDeleteCompletedTasks()}>
-              Clear completed
-            </Button> */}
           </article>
         </StyledTaskListFooter>
       </StyledTaskListSection>

@@ -7,8 +7,8 @@ export const CONSTANTS = {
     CHANGE_TASK: 'change-task',
   },
   FILTERS: {
-    ALL: () => true,
-    ACTIVE: task => !task.complete,
-    COMPLETED: task => task.complete,
+    All: () => true,
+    Active: task => !task.complete,
+    Completed: task => task.complete,
   },
 };
