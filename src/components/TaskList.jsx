@@ -14,19 +14,18 @@ const StyledTaskListSection = styled.section`
   grid-column: 1 / -1;
   /* box-shadow: rgba(0, 0, 0, 0.2) 0.1rem 0.4rem 1.2rem; */
   box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
+  display: flex;
+  flex-direction: column;
+  height: 62vh;
 `;
 
 const StyledTaskList = styled.ul`
-  /* grid-column: 1 / -1; */
-  /* display: grid;
-  align-items: center;
-  grid-template-columns: 1fr 10fr 2fr;
-  padding: 1.5rem;
-  background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
-  border-radius: 0.4rem; */
+  /* For scrollbar, note that flex is needed on parent and flex shrink: 0 on TaskListFooter child element */
+  overflow-y: auto;
 `;
 
 const StyledTaskListFooter = styled.footer`
+  flex-shrink: 0;
   background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
