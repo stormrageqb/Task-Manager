@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StyledCheckbox = styled.input`
+export const StyledCheckbox = styled.input`
   appearance: none;
   background-color: transparent;
   outline: 0.13rem solid ${({ theme }) => theme.color.darkTheme.darkGrayBlue};

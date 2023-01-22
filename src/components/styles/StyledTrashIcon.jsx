@@ -1,6 +1,5 @@
 import TrashIcon from '/src/assets/icon-trash.svg';
 import styled, { css } from 'styled-components';
-import Button from '../Button';
 
 // Transient props syntax
 // const StyledIcon = styled(({ ...props }) => <TrashIcon {...props} />)`
@@ -21,6 +20,15 @@ const StyledIcon = styled(TrashIcon)`
     fill: ${({ theme }) => theme.color.secondary};
   }
 
+  & h1 {
+    color: white;
+    z-index: 55555555;
+    font-size: 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   ${props =>
     props.modal &&
     css`
@@ -32,6 +40,8 @@ const StyledIcon = styled(TrashIcon)`
       padding: 1rem;
       cursor: default;
     `}
+
+  ${props => props.modalAll && css``}
 `;
 
 const StyledTrashIcon = ({ ...props }) => {

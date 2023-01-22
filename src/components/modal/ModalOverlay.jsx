@@ -32,6 +32,37 @@ const StyledModalHeader = styled.header`
   padding: 2.4rem;
   text-align: center;
   width: 100%;
+
+  & div {
+    position: relative;
+
+    & div {
+      position: absolute;
+      top: 3.4rem;
+      left: 25.5rem;
+      appearance: none;
+      background-color: #fff;
+      outline: 0.13rem solid
+        ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+
+      font: inherit;
+      color: currentColor;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      display: grid;
+      place-content: center;
+
+      transition: all 0.25s;
+      &::before {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 14%, 80% 0%, 43% 62%);
+        box-shadow: inset 1rem 1rem ${({ theme }) => theme.color.primary};
+      }
+    }
+  }
 `;
 
 const StyledModalSection = styled.section`
@@ -89,13 +120,16 @@ const ModalOverlay = ({
             &#10006;
           </Button>
           {/* Transient props set for this icon set to true to fix bug */}
-          <StyledTrashIcon modal="true" />
+          <div>
+            <div></div>
+            <StyledTrashIcon modalAll modal="true" />
+          </div>
         </StyledModalHeader>
         <StyledModalSection>
           <h2>Delete?</h2>
           <p>Are you sure you want to delete all completed tasks?</p>
           <p>
-            This action is <strong>irreversible.</strong>
+            This action is <strong>irreversible</strong>.
           </p>
         </StyledModalSection>
         <StyledModalFooter>
@@ -125,9 +159,8 @@ const ModalOverlay = ({
       <StyledModalSection>
         <h2>Delete?</h2>
         <p>Are you sure you want to delete this task?</p>
-        {/* <p>{text}</p> */}
         <p>
-          This action is <strong>irreversible.</strong>
+          This action is <strong>irreversible</strong>.
         </p>
       </StyledModalSection>
       <StyledModalFooter>
