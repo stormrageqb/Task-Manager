@@ -32,36 +32,41 @@ const StyledModalHeader = styled.header`
   padding: 2.4rem;
   text-align: center;
   width: 100%;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* For Checkmark within trash icon */
   & div {
+    width: max-content;
+    height: max-content;
     position: relative;
+    line-height: 1.3;
+  }
+  & span {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
 
-    & div {
-      position: absolute;
-      top: 3.4rem;
-      left: 25.5rem;
-      appearance: none;
-      background-color: ${({ theme }) => theme.color.primary};
-      outline: 0.15rem solid
-        ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+    appearance: none;
+    background-color: ${({ theme }) => theme.color.primary};
+    outline: 0.15rem solid ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
 
-      font: inherit;
-      color: currentColor;
-      width: 1.8rem;
-      height: 1.8rem;
-      border-radius: 50%;
-      display: grid;
-      place-content: center;
+    font: inherit;
+    color: currentColor;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
 
-      transition: all 0.25s;
-      &::before {
-        content: '';
-        width: 1rem;
-        height: 1rem;
-        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 14%, 80% 0%, 43% 62%);
-        box-shadow: inset 1rem 1rem #fff;
-      }
+    transition: all 0.25s;
+    &::before {
+      content: '';
+      width: 1rem;
+      height: 1rem;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 14%, 80% 0%, 43% 62%);
+      box-shadow: inset 1rem 1rem #fff;
     }
   }
 `;
@@ -122,8 +127,8 @@ const ModalOverlay = ({
           </Button>
           {/* Transient props set for this icon set to true to fix bug */}
           <div>
-            <div></div>
-            <StyledTrashIcon modalAll modal="true" />
+            <span></span>
+            <StyledTrashIcon modal="true" />
           </div>
         </StyledModalHeader>
         <StyledModalSection>

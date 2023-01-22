@@ -40,12 +40,14 @@ const StyledIcon = styled(TrashIcon)`
       padding: 1rem;
       cursor: default;
     `}
-
-  ${props => props.modalAll && css``}
 `;
 
 const StyledTrashIcon = ({ ...props }) => {
-  return <StyledIcon {...props} />;
+  return (
+    <>
+      <StyledIcon {...props} />
+    </>
+  );
 };
 
 export default StyledTrashIcon;

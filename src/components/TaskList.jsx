@@ -94,7 +94,7 @@ const TaskList = ({
         <StyledTaskListFooter>
           <article>
             <span>
-              {remainingTasks.length} item
+              <strong>{remainingTasks.length}</strong> item
               {remainingTasks.length === 1 ? null : 's'} left
             </span>
             <div>
