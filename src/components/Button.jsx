@@ -29,6 +29,10 @@ const Button = styled.button`
     props.lastChild &&
     css`
       margin-left: auto;
+
+      &:hover {
+        color: ${({ theme }) => theme.color.secondary};
+      }
     `}
   ${props =>
     props.save &&
@@ -68,6 +72,12 @@ const Button = styled.button`
     css`
       border-left: 0.1rem solid
         ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+    `}
+
+    ${props =>
+    props.ariaPressed &&
+    css`
+      color: ${({ theme }) => theme.color.primary};
     `}
 `;
 

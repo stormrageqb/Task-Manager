@@ -102,7 +102,7 @@ const TaskList = ({
                 return (
                   <Button
                     name={name}
-                    aria-pressed={name === filter}
+                    ariaPressed={name === filter}
                     key={name}
                     onClick={() => setFilter(name)}
                   >
