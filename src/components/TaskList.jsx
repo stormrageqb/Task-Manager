@@ -1,12 +1,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { taskData } from '../taskData';
 import Button from './Button';
-import Checkbox from './Checkbox';
 import Task from './Task';
 import ConfirmDeleteModal from './modal/ConfirmDeleteModal';
 import { CONSTANTS } from '../constants';
-import { css } from 'styled-components';
 
 const filterNames = Object.keys(CONSTANTS.FILTERS);
 console.log(filterNames);
@@ -20,6 +17,19 @@ const StyledTaskListSection = styled.section`
   max-height: 62vh;
 `;
 
+const StyledZeroTaskParagraph = styled.p`
+  font-size: 2rem;
+  color: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+  background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
+  font-weight: 500;
+  padding: 3rem;
+  text-align: center;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 0.1rem solid
+    ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+`;
+
 const StyledTaskList = styled.ul`
   /* For scrollbar, note that flex is needed on parent and flex shrink: 0 on TaskListFooter child element */
 
@@ -29,6 +39,8 @@ const StyledTaskList = styled.ul`
   background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
 
   border-radius: 0.4rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 
   &::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
@@ -99,6 +111,11 @@ const TaskList = ({
       <StyledTaskListSection>
         <StyledTaskList>
           {/* Filters through the values found in CONSTANTS which correspond to the dynamic value of filter from useState */}
+          {tasks.length === 0 && (
+            <StyledZeroTaskParagraph>
+              All caught up! Try adding a todo.
+            </StyledZeroTaskParagraph>
+          )}
           {tasks.filter(CONSTANTS.FILTERS[filter]).map((task, i) => {
             return (
               <Task
