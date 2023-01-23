@@ -6,6 +6,7 @@ import Checkbox from './Checkbox';
 import Task from './Task';
 import ConfirmDeleteModal from './modal/ConfirmDeleteModal';
 import { CONSTANTS } from '../constants';
+import { css } from 'styled-components';
 
 const filterNames = Object.keys(CONSTANTS.FILTERS);
 console.log(filterNames);
@@ -16,12 +17,34 @@ const StyledTaskListSection = styled.section`
   box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
   display: flex;
   flex-direction: column;
-  height: 62vh;
+  max-height: 62vh;
 `;
 
 const StyledTaskList = styled.ul`
   /* For scrollbar, note that flex is needed on parent and flex shrink: 0 on TaskListFooter child element */
+
   overflow-y: auto;
+  /* Change if you want a different height for entire container */
+  /* max-height: 30rem; */
+  background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
+
+  border-radius: 0.4rem;
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+    border: 0.4rem solid transparent;
+    border-radius: 0.8rem;
+    background-clip: padding-box;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 1.6rem;
+  }
+  scrollbar-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
 `;
 
 const StyledTaskListFooter = styled.footer`

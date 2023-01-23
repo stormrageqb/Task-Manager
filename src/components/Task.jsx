@@ -21,7 +21,7 @@ const StyledListItem = styled.li`
   list-style: none;
   :first-child {
     border-top-left-radius: 0.4rem;
-    border-top-right-radius: 0.4rem;
+    /* border-top-right-radius: 0.4rem; */
   }
 `;
 
