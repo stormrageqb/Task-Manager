@@ -7,7 +7,7 @@ export const StyledInput = styled.input`
   font-size: 1.6rem;
   padding: 0.2rem 0;
   background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
-  color: ${({ theme }) => theme.color.lightTheme.lightGray};
+  color: ${({ theme }) => theme.color.darkTheme.lightGray};
 
   &::placeholder {
     font-weight: 500;

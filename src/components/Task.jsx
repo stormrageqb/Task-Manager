@@ -10,7 +10,7 @@ import { CONSTANTS } from '../constants';
 
 const StyledListItem = styled.li`
   font-size: 1.6rem;
-  color: ${({ theme }) => theme.color.lightTheme.lightGray};
+  color: ${({ theme }) => theme.color.darkTheme.lightGray};
   font-weight: 400;
   display: grid;
   grid-template-columns: 1fr 10fr 1fr 1fr;

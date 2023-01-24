@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import AppContainer from './components/AppContainer';
 import EmptySection from './components/EmptySection';
@@ -7,6 +8,12 @@ import GlobalStyles from './components/styles/GlobalStyles';
 import { theme } from './themes';
 
 function App() {
+  const { userTheme, setUserTheme } = useState('dark');
+  const toggleTheme = () => {
+    theme === 'dark'
+      ? setUserTheme(prevTheme => (prevTheme = 'light'))
+      : setUserTheme(prevTheme => (prevTheme = 'dark'));
+  };
   return (
     <>
       <ThemeProvider theme={theme}>
