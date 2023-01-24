@@ -73,14 +73,18 @@ const Task = ({
         <StyledInputForm onSubmit={handleSubmit}>
           <StyledInput
             onChange={e => {
-              onChangeTask({
-                ...task,
-                text: e.target.value,
-              });
+              if (e.target.value.length <= CONSTANTS.MAXIMUM_CHARACTERS) {
+                onChangeTask({
+                  ...task,
+                  text: e.target.value,
+                });
+              }
             }}
             editing
             value={task.text}
             autoFocus
+            maxLength={CONSTANTS.MAXIMUM_CHARACTERS}
+            required
           />
           <Button type="button" save onClick={onSave}>
             Save
