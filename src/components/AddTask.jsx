@@ -4,6 +4,7 @@ import { CONSTANTS } from '../constants';
 import Button from './Button';
 import Checkbox from './Checkbox';
 import { StyledInput } from './styles/StyledInput.styled';
+import { StyledCharacterCounter } from './styles/StyledCharacterCounter.styled';
 
 const StyledForm = styled.form`
   grid-column: 1 / -1;
@@ -15,23 +16,6 @@ const StyledForm = styled.form`
   border-radius: 0.4rem;
   /* box-shadow: rgba(0, 0, 0, 0.2) 0.8rem 0.4rem 1.2rem; */
   box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
-`;
-
-const StyledCharacterCounter = styled.span`
-  font-size: 1.2rem;
-  font-weight: 400;
-  background-color: transparent;
-  margin-left: 0.3rem;
-  color: ${({ theme }) => theme.color.lightTheme.darkGrayBlue};
-
-  color: ${({ children, theme }) => {
-    if (children < 1) {
-      // TEMP COLOR
-      return 'firebrick';
-    } else {
-      return theme.color.lightTheme.darkGrayBlue;
-    }
-  }};
 `;
 
 const AddTask = ({ task, onAddTask, onChangeTask }) => {
