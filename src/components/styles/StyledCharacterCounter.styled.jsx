@@ -5,15 +5,12 @@ export const StyledCharacterCounter = styled.span`
   font-weight: 400;
   background-color: transparent;
   margin-left: 0.3rem;
-  color: ${({ theme }) => theme.color.lightTheme.darkGrayBlue};
-  /* color: ${({ theme }) => theme.color.primary}; */
 
   color: ${({ children, theme }) => {
     if (children < 1) {
-      // TEMP COLOR
-      return 'firebrick';
+      return theme.color.darkTheme.darkGrayBlue;
     } else {
-      return theme.color.lightTheme.darkGrayBlue;
+      return theme.color.primary;
     }
   }};
 `;
