@@ -9,19 +9,18 @@ import { theme } from './themes';
 
 function App() {
   const { userTheme, setUserTheme } = useState('dark');
-  const toggleTheme = () => {
-    theme === 'dark'
-      ? setUserTheme(prevTheme => (prevTheme = 'light'))
-      : setUserTheme(prevTheme => (prevTheme = 'dark'));
-  };
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider
+        theme={
+          userTheme === 'dark' ? theme.color.darkTheme : theme.color.lightTheme
+        }
+      >
         <GlobalStyles />
         <GridContainer>
           <Header />
           <EmptySection />
-          <AppContainer />
+          <AppContainer setUserTheme={setUserTheme} />
         </GridContainer>
       </ThemeProvider>
     </>

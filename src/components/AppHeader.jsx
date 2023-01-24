@@ -28,11 +28,16 @@ const StyledSunIcon = styled(SunIcon)`
   }
 `;
 
-const AppHeader = () => {
+const AppHeader = ({ setUserTheme }) => {
+  const toggleTheme = () => {
+    theme === 'dark'
+      ? setUserTheme(prevTheme => (prevTheme = 'light'))
+      : setUserTheme(prevTheme => (prevTheme = 'dark'));
+  };
   return (
     <StyledAppHeader>
       <StyledLogo>Todo</StyledLogo>
-      <StyledSunIcon />
+      <StyledSunIcon onClick={toggleTheme} />
     </StyledAppHeader>
   );
 };
