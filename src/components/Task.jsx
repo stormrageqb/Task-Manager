@@ -3,8 +3,10 @@ import styled, { css } from 'styled-components';
 import Button from './Button';
 import Checkbox from './Checkbox';
 import ConfirmDeleteModal from './modal/ConfirmDeleteModal';
+import { StyledCharacterCounter } from './styles/StyledCharacterCounter.styled';
 import { StyledInput } from './styles/StyledInput.styled';
 import StyledTrashIcon from './styles/StyledTrashIcon';
+import { CONSTANTS } from '../constants';
 
 const StyledListItem = styled.li`
   font-size: 1.6rem;
@@ -68,7 +70,6 @@ const Task = ({
   if (isEditing) {
     taskContent = (
       <>
-        {/* <span>20</span> */}
         <StyledInputForm onSubmit={handleSubmit}>
           <StyledInput
             onChange={e => {
@@ -108,7 +109,11 @@ const Task = ({
         />
       )}
       <StyledListItem isEditing={isEditing}>
-        {isEditing && <span>20</span>}
+        {isEditing && (
+          <StyledCharacterCounter>
+            {CONSTANTS.MAXIMUM_CHARACTERS - task.text.length}
+          </StyledCharacterCounter>
+        )}
         {!isEditing && <Checkbox task={task} onChange={onChangeTask} />}
         {/* <Checkbox task={task} onChange={onChangeTask} /> */}
         {taskContent}
