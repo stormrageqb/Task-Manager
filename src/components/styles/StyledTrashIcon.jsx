@@ -12,12 +12,12 @@ const StyledIcon = styled(TrashIcon)`
   width: 1.45rem;
   margin-top: -0.1rem;
   margin-right: -0.1rem;
-  fill: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+  fill: ${({ theme }) => theme.fontColorDark};
   justify-self: flex-end;
   cursor: pointer;
 
   &:hover {
-    fill: ${({ theme }) => theme.color.secondary};
+    fill: ${({ theme }) => theme.secondary};
   }
 
   & h1 {
@@ -34,8 +34,8 @@ const StyledIcon = styled(TrashIcon)`
     css`
       height: 8.4rem;
       width: 8.4rem;
-      fill: ${({ theme }) => theme.color.secondary};
-      background-color: ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
+      fill: ${({ theme }) => theme.secondary};
+      background-color: ${({ theme }) => theme.fontColorDarkLg};
       border-radius: 50%;
       padding: 1rem;
       cursor: default;

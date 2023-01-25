@@ -6,8 +6,8 @@ export const StyledInput = styled.input`
   font-family: inherit;
   font-size: 1.6rem;
   padding: 0.2rem 0;
-  background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
-  color: ${({ theme }) => theme.color.darkTheme.lightGray};
+  background-color: ${({ theme }) => theme.appBgMain};
+  color: ${({ theme }) => theme.fontColorPrimary};
 
   &::placeholder {
     font-weight: 500;
@@ -21,8 +21,7 @@ export const StyledInput = styled.input`
       // Fixed hack, but consider changing color
       props.editing &&
       css`
-        box-shadow: 0 0.1rem 0 0
-          ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
+        box-shadow: 0 0.1rem 0 0 ${({ theme }) => theme.darkBoxShadow};
       `}
   }
 

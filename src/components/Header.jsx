@@ -6,8 +6,8 @@ const StyledHeader = styled.header`
 
   background-image: linear-gradient(
       to right,
-      ${({ theme }) => theme.color.trueGradient[0]},
-      ${({ theme }) => theme.color.trueGradient[1]}
+      ${props => props.theme.headerGradient[0]},
+      ${props => props.theme.headerGradient[1]}
     ),
     url(/bg-desktop-dark.jpg);
   /* no-repeat left top/contain; */
@@ -21,7 +21,13 @@ const StyledHeader = styled.header`
 `;
 
 const Header = () => {
-  return <StyledHeader></StyledHeader>;
+  return (
+    <StyledHeader
+      theme={{
+        headerGradient: ['rgba(87, 221, 255, 0.2)', 'rgba(192, 88, 243, 0.2)'],
+      }}
+    ></StyledHeader>
+  );
 };
 
 export default Header;

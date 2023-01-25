@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledCheckbox = styled.input`
   appearance: none;
   background-color: transparent;
-  outline: 0.13rem solid ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+  outline: 0.13rem solid ${({ theme }) => theme.fontColorDark};
   margin: 0;
   font: inherit;
   color: currentColor;
@@ -30,7 +30,7 @@ export const StyledCheckbox = styled.input`
   }
 
   &:checked {
-    background-color: ${({ theme }) => theme.color.primary};
+    background-color: ${({ theme }) => theme.primary};
   }
 
   &:checked::before {

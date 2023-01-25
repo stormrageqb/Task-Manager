@@ -10,7 +10,7 @@ import { CONSTANTS } from '../constants';
 
 const StyledListItem = styled.li`
   font-size: 1.6rem;
-  color: ${({ theme }) => theme.color.darkTheme.lightGray};
+  color: ${({ theme }) => theme.fontColorPrimary};
   font-weight: 400;
   display: grid;
   grid-template-columns: 1fr 10fr 1fr 1fr;
@@ -22,10 +22,9 @@ const StyledListItem = styled.li`
     `}
   align-items: center;
   padding: 1.5rem;
-  background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
+  background-color: ${({ theme }) => theme.appBgMain};
 
-  border-bottom: 0.1rem solid
-    ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+  border-bottom: 0.1rem solid ${({ theme }) => theme.fontColorDarkMd};
   list-style: none;
   :first-child {
     border-top-left-radius: 0.4rem;
@@ -45,7 +44,7 @@ const StyledTaskText = styled.span`
     props.task.complete &&
     css`
       text-decoration: line-through;
-      color: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+      color: ${({ theme }) => theme.fontColorDark};
     `}
 `;
 

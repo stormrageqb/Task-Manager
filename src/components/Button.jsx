@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 const Button = styled.button`
-  color: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+  color: ${({ theme }) => theme.fontColorDark};
   display: inline-block;
   border: none;
   font-size: 1.1rem;
@@ -15,7 +15,7 @@ const Button = styled.button`
   justify-self: flex-end;
   text-transform: capitalize;
   &:hover {
-    color: ${({ theme }) => theme.color.primary};
+    color: ${({ theme }) => theme.primary};
   }
 
   ${props =>
@@ -31,13 +31,13 @@ const Button = styled.button`
       margin-left: auto;
 
       &:hover {
-        color: ${({ theme }) => theme.color.secondary};
+        color: ${({ theme }) => theme.secondary};
       }
     `}
   ${props =>
     props.save &&
     css`
-      color: ${({ theme }) => theme.color.primary};
+      color: ${({ theme }) => theme.primary};
     `}
   ${props =>
     props.xModal &&
@@ -47,10 +47,10 @@ const Button = styled.button`
       top: 1rem;
       right: 2rem;
       font-size: 2.4rem;
-      color: ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
+      color: ${({ theme }) => theme.fontColorDarkLg};
 
       &:hover {
-        color: ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+        color: ${({ theme }) => theme.fontColorDarkMd};
       }
     `}
     ${props =>
@@ -63,28 +63,26 @@ const Button = styled.button`
       padding: 2.4rem 0;
 
       &:hover {
-        background-color: ${({ theme }) =>
-          theme.color.darkTheme.darkerGrayBlue};
+        background-color: ${({ theme }) => theme.fontColorDarkMd};
       }
     `}
     ${props =>
     props.modalDelete &&
     css`
       &:hover {
-        color: ${({ theme }) => theme.color.secondary};
+        color: ${({ theme }) => theme.secondary};
       }
     `}
     ${props =>
     props.modalCancel &&
     css`
-      border-left: 0.1rem solid
-        ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+      border-left: 0.1rem solid ${({ theme }) => theme.fontColorDarkMd};
     `}
 
     ${props =>
     props.ariaPressed &&
     css`
-      color: ${({ theme }) => theme.color.primary};
+      color: ${({ theme }) => theme.primary};
     `}
 `;
 

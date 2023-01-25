@@ -36,32 +36,32 @@ const StyledTaskList = styled.ul`
   overflow-y: auto;
   /* Change if you want a different height for entire container */
   /* max-height: 30rem; */
-  background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
+  background-color: ${({ theme }) => theme.appBgMain};
 
   border-radius: 0.4rem;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 
   &::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+    background-color: ${({ theme }) => theme.scrollThumb};
     border: 0.4rem solid transparent;
     border-radius: 0.8rem;
     background-clip: padding-box;
 
     &:hover {
-      background-color: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+      background-color: ${({ theme }) => theme.scrollThumbHover};
     }
   }
 
   &::-webkit-scrollbar {
     width: 1.6rem;
   }
-  scrollbar-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
+  scrollbar-color: ${({ theme }) => theme.appBgMain};
 `;
 
 const StyledTaskListFooter = styled.footer`
   flex-shrink: 0;
-  background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
+  background-color: ${({ theme }) => theme.appBgMain};
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
   & article {
@@ -72,7 +72,7 @@ const StyledTaskListFooter = styled.footer`
 
     & span {
       font-size: 1.1rem;
-      color: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+      color: ${({ theme }) => theme.fontColorDark};
       font-weight: 400;
     }
 

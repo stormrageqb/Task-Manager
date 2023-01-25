@@ -8,9 +8,9 @@ export const StyledCharacterCounter = styled.span`
 
   color: ${({ children, theme }) => {
     if (children < 1) {
-      return theme.color.darkTheme.darkGrayBlue;
+      return theme.fontColorDark;
     } else {
-      return theme.color.primary;
+      return theme.primary;
     }
   }};
 `;

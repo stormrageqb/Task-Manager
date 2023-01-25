@@ -26,8 +26,8 @@ const StyledModalHeader = styled.header`
   grid-column: 1 / -1;
   background-image: linear-gradient(
     to right,
-    ${({ theme }) => theme.color.modalGradient[0]},
-    ${({ theme }) => theme.color.modalGradient[1]}
+    ${props => props.theme.modalGradient[0]},
+    ${props => props.theme.modalGradient[1]}
   );
   padding: 2.4rem;
   text-align: center;
@@ -49,8 +49,9 @@ const StyledModalHeader = styled.header`
     transform: translate(50%, -50%);
 
     appearance: none;
-    background-color: ${({ theme }) => theme.color.primary};
-    outline: 0.15rem solid ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
+    /* background-color: ${({ theme }) => theme.primary}; */
+    background-color: #3a7bfd;
+    outline: 0.15rem solid ${({ theme }) => theme.fontColorDark};
 
     font: inherit;
     color: currentColor;
@@ -87,7 +88,7 @@ const StyledModalSection = styled.section`
     font-size: 1.8rem;
     text-align: center;
   }
-  background-color: ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
+  background-color: ${({ theme }) => theme.fontColorDarkLg};
   padding: 2.4rem;
 `;
 
@@ -95,10 +96,9 @@ const StyledModalFooter = styled.footer`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column: 1 / -1;
-  background-color: ${({ theme }) => theme.color.darkTheme.darkestGrayBlue};
+  background-color: ${({ theme }) => theme.fontColorDarkLg};
   /* padding: 2.4rem 0; */
-  border-top: 0.1rem solid
-    ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+  border-top: 0.135rem solid ${({ theme }) => theme.fontColorDarkMd};
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
   width: 100%;
@@ -121,7 +121,11 @@ const ModalOverlay = ({
   if (showDeleteCompletedModal) {
     return (
       <StyledModalContainer>
-        <StyledModalHeader>
+        <StyledModalHeader
+          theme={{
+            modalGradient: ['rgba(87, 221, 255)', 'rgba(192, 88, 243)'],
+          }}
+        >
           <Button xModal onClick={() => setShowDeleteCompletedModal(false)}>
             &#10006;
           </Button>
@@ -155,7 +159,9 @@ const ModalOverlay = ({
   }
   return (
     <StyledModalContainer>
-      <StyledModalHeader>
+      <StyledModalHeader
+        theme={{ modalGradient: ['rgba(87, 221, 255)', 'rgba(192, 88, 243)'] }}
+      >
         <Button xModal onClick={() => setShowDeleteModal(false)}>
           &#10006;
         </Button>
