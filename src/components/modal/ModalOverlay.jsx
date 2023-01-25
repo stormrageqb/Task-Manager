@@ -79,6 +79,7 @@ const StyledModalSection = styled.section`
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
+  color: ${({ theme }) => theme.fontColorPrimary};
 
   & h2 {
     font-size: 3.2rem;

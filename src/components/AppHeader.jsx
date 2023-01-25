@@ -30,7 +30,6 @@ const StyledSunIcon = styled(SunIcon)`
 `;
 
 const StyledMoonIcon = styled(MoonIcon)`
-  /* color: #f8f6f6; */
   fill: ${({ theme }) => theme.fontColorPrimary};
   transform: scale(0.8);
   cursor: pointer;
