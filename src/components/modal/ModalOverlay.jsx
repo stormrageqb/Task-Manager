@@ -49,9 +49,9 @@ const StyledModalHeader = styled.header`
     transform: translate(50%, -50%);
 
     appearance: none;
-    /* background-color: ${({ theme }) => theme.primary}; */
     background-color: #3a7bfd;
     outline: 0.15rem solid ${({ theme }) => theme.fontColorDark};
+    /* background-color: ${({ theme }) => theme.primary}; */
 
     font: inherit;
     color: currentColor;

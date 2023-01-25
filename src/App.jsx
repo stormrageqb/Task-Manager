@@ -8,7 +8,7 @@ import GlobalStyles from './components/styles/GlobalStyles';
 import { theme } from './themes';
 
 function App() {
-  const { userTheme, setUserTheme } = useState('dark');
+  const [userTheme, setUserTheme] = useState('dark');
   return (
     <>
       <ThemeProvider
@@ -20,7 +20,7 @@ function App() {
         <GridContainer>
           <Header />
           <EmptySection />
-          <AppContainer setUserTheme={setUserTheme} />
+          <AppContainer userTheme={userTheme} setUserTheme={setUserTheme} />
         </GridContainer>
       </ThemeProvider>
     </>

@@ -42,7 +42,7 @@ const taskReducer = (tasks, action) => {
 
 const initialState = taskData;
 
-const AppContainer = ({ setUserTheme }) => {
+const AppContainer = ({ userTheme, setUserTheme }) => {
   const [state, dispatch] = useReducer(taskReducer, initialState);
 
   const handleAddTask = text => {
@@ -71,7 +71,7 @@ const AppContainer = ({ setUserTheme }) => {
   useState(false);
   return (
     <StyledAppContainer>
-      <AppHeader setUserTheme={setUserTheme} />
+      <AppHeader userTheme={userTheme} setUserTheme={setUserTheme} />
       <AddTask
         onAddTask={handleAddTask}
         onChangeTask={handleChangeTask}
