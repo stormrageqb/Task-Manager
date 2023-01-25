@@ -23,6 +23,7 @@ const StyledListItem = styled.li`
   align-items: center;
   padding: 1.5rem;
   background-color: ${({ theme }) => theme.appBgMain};
+  transition: background-color 0.3s;
 
   border-bottom: 0.1rem solid ${({ theme }) => theme.fontColorDarkMd};
   list-style: none;

@@ -6,6 +6,7 @@ const StyledEmptySection = styled.div`
 
   background-color: ${({ theme }) => theme.emptySectionBg};
   height: 100%;
+  transition: background-color 0.3s;
 `;
 
 const EmptySection = () => {

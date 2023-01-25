@@ -64,6 +64,8 @@ const StyledTaskListFooter = styled.footer`
   background-color: ${({ theme }) => theme.appBgMain};
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
+  transition: background-color 0.3s;
+
   & article {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

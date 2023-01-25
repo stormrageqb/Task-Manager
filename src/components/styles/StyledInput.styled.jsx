@@ -8,6 +8,7 @@ export const StyledInput = styled.input`
   padding: 0.2rem 0;
   background-color: ${({ theme }) => theme.appBgMain};
   color: ${({ theme }) => theme.fontColorPrimary};
+  transition: background-color 0.3s;
 
   &::placeholder {
     font-weight: 500;

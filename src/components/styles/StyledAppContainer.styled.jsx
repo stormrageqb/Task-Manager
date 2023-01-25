@@ -11,6 +11,4 @@ export const StyledAppContainer = styled.div`
   grid-template-rows: 5.2rem min-content min-content;
   height: 80vh;
   row-gap: 2rem;
-
-  /* background-color: red; */
 `;
