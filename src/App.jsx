@@ -18,7 +18,7 @@ function App() {
       >
         <GlobalStyles />
         <GridContainer>
-          <Header />
+          <Header userTheme={userTheme} />
           <EmptySection />
           <AppContainer userTheme={userTheme} setUserTheme={setUserTheme} />
         </GridContainer>
