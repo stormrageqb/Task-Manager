@@ -118,7 +118,7 @@ const ModalOverlay = ({
     setShowDeleteCompletedModal(false);
   };
 
-  // Render two 'separate' modals based on which button is clicked in the UI. Note that the callback method does hide the modal after clicking delete in the deleteCompleted modal, which is why I've provided the full function just above.
+  // Render two 'separate' modals based on which button is clicked in the UI. Note that the callback method doesn't hide the modal after clicking delete in the deleteCompleted modal, which is why I've provided the full function just above.
   if (showDeleteCompletedModal) {
     return (
       <StyledModalContainer>

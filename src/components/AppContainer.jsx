@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
 import AppHeader from './AppHeader';
@@ -44,6 +44,21 @@ const initialState = taskData;
 
 const AppContainer = ({ userTheme, setUserTheme }) => {
   const [state, dispatch] = useReducer(taskReducer, initialState);
+
+  // Local Storage:
+  useEffect(() => {
+    localStorage.setItem('storedTask', JSON.stringify(state));
+  }, [state]);
+  // useEffect(() => {
+  //   const storedTasks = JSON.parse(localStorage.getItem('storedTasks'));
+  //   if (storedTasks) {
+  //     dispatch({
+  //       type: CONSTANTS.ACTIONS.ADD_TASK,
+  //       id: crypto.randomUUID(),
+  //       text: text,
+  //     });
+  //   }
+  // }, []);
 
   const handleAddTask = text => {
     dispatch({
