@@ -40,25 +40,30 @@ const taskReducer = (tasks, action) => {
   }
 };
 
-const initialState = taskData;
+// const initialState = taskData;
+const initialState = [];
+
+// Local Storage:
+const init = () => {
+  const storedTasks = localStorage.getItem('storedTask');
+  if (storedTasks) {
+    try {
+      return JSON.parse(storedTasks);
+    } catch (error) {
+      return initialState;
+    }
+  } else {
+    return initialState;
+  }
+};
 
 const AppContainer = ({ userTheme, setUserTheme }) => {
-  const [state, dispatch] = useReducer(taskReducer, initialState);
+  const [state, dispatch] = useReducer(taskReducer, initialState, init);
 
   // Local Storage:
   useEffect(() => {
     localStorage.setItem('storedTask', JSON.stringify(state));
   }, [state]);
-  // useEffect(() => {
-  //   const storedTasks = JSON.parse(localStorage.getItem('storedTasks'));
-  //   if (storedTasks) {
-  //     dispatch({
-  //       type: CONSTANTS.ACTIONS.ADD_TASK,
-  //       id: crypto.randomUUID(),
-  //       text: text,
-  //     });
-  //   }
-  // }, []);
 
   const handleAddTask = text => {
     dispatch({

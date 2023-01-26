@@ -19,15 +19,14 @@ const StyledTaskListSection = styled.section`
 
 const StyledZeroTaskParagraph = styled.p`
   font-size: 2rem;
-  color: ${({ theme }) => theme.color.darkTheme.darkGrayBlue};
-  background-color: ${({ theme }) => theme.color.darkTheme.darkBlueDesat};
+  color: ${({ theme }) => theme.fontColorDark};
+  background-color: ${({ theme }) => theme.appBgMain};
   font-weight: 500;
   padding: 3rem;
   text-align: center;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  border-bottom: 0.1rem solid
-    ${({ theme }) => theme.color.darkTheme.darkerGrayBlue};
+  border-bottom: 0.1rem solid ${({ theme }) => theme.fontColorDarkMd};
 `;
 
 const StyledTaskList = styled.ul`
