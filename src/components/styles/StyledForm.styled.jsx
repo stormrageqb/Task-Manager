@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledForm = styled.form`
   grid-column: 1 / -1;
@@ -11,4 +11,16 @@ export const StyledForm = styled.form`
   /* box-shadow: rgba(0, 0, 0, 0.2) 0.8rem 0.4rem 1.2rem; */
   box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
   transition: background-color 0.3s;
+
+  ${props =>
+    props.isEditing &&
+    css`
+      grid-column: unset;
+      /* Add high fr number for input so it takes up the rest of the space when editing */
+      grid-template-columns: 10fr 1fr;
+      align-items: initial;
+      padding: 0;
+      border-radius: 0;
+      box-shadow: none;
+    `}
 `;

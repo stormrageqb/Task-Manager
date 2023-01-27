@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import styled, { css } from 'styled-components';
 import { CONSTANTS } from '../constants';
 import Button from './Button';
-import Checkbox from './Checkbox';
 import { StyledInput } from './styles/StyledInput.styled';
 import { StyledForm } from './styles/StyledForm.styled';
 import { StyledCharacterCounter } from './styles/StyledCharacterCounter.styled';
 
-const AddTask = ({ task, onAddTask, onChangeTask }) => {
+const AddTask = ({ onAddTask }) => {
   const [taskName, setTaskName] = useState('');
 
   const handleSubmit = e => {

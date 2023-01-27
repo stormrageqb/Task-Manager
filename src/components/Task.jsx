@@ -4,6 +4,7 @@ import Button from './Button';
 import Checkbox from './Checkbox';
 import ConfirmDeleteModal from './modal/ConfirmDeleteModal';
 import { StyledCharacterCounter } from './styles/StyledCharacterCounter.styled';
+import { StyledForm } from './styles/StyledForm.styled';
 import { StyledInput } from './styles/StyledInput.styled';
 import StyledTrashIcon from './styles/StyledTrashIcon';
 import { CONSTANTS } from '../constants';
@@ -31,12 +32,6 @@ const StyledListItem = styled.li`
     border-top-left-radius: 0.4rem;
     border-top-right-radius: 0.4rem;
   }
-`;
-
-const StyledInputForm = styled.form`
-  display: grid;
-  /* Add high fr number for input so it takes up the rest of the space when editing */
-  grid-template-columns: 10fr 1fr;
 `;
 
 const StyledTaskText = styled.span`
@@ -70,7 +65,7 @@ const Task = ({
   if (isEditing) {
     taskContent = (
       <>
-        <StyledInputForm onSubmit={handleSubmit}>
+        <StyledForm isEditing={isEditing} onSubmit={handleSubmit}>
           <StyledInput
             onChange={e => {
               if (e.target.value.length <= CONSTANTS.MAXIMUM_CHARACTERS) {
@@ -89,7 +84,7 @@ const Task = ({
           <Button type="button" save onClick={onSave}>
             Save
           </Button>
-        </StyledInputForm>
+        </StyledForm>
       </>
     );
   } else {
