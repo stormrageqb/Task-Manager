@@ -52,7 +52,6 @@ const Task = ({
   onDeleteTask,
   onChangeTask,
   task,
-  reorderTask,
 }) => {
   // const [showModal, setShowModal] = useState(false);
   // const { showDeleteModal, setShowDeleteModal } = useContext(ModalContext);

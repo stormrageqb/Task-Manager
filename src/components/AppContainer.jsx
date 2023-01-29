@@ -35,7 +35,7 @@ const taskReducer = (tasks, action) => {
       });
     }
     // Make copy of all tasks to reorder them
-    case 'reorder-task': {
+    case CONSTANTS.ACTIONS.REORDER_TASK: {
       return [...action.tasks];
     }
     default: {
@@ -82,7 +82,7 @@ const AppContainer = ({ userTheme, setUserTheme }) => {
   };
 
   const handleDeleteCompletedTasks = () => {
-    dispatch({ type: 'delete-completed-tasks' });
+    dispatch({ type: CONSTANTS.ACTIONS.DELETE_COMPLETED_TASKS });
   };
 
   const handleChangeTask = task => {
@@ -90,7 +90,7 @@ const AppContainer = ({ userTheme, setUserTheme }) => {
   };
 
   const handleReorderTask = tasks => {
-    dispatch({ type: 'reorder-task', tasks: tasks });
+    dispatch({ type: CONSTANTS.ACTIONS.REORDER_TASK, tasks: tasks });
   };
 
   // MODAL CONTEXT

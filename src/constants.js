@@ -5,6 +5,7 @@ export const CONSTANTS = {
     DELETE_TASK: 'delete-task',
     DELETE_COMPLETED_TASKS: 'delete-completed-tasks',
     CHANGE_TASK: 'change-task',
+    REORDER_TASK: 'reorder-task',
   },
   FILTERS: {
     All: () => true,
