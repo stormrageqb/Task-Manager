@@ -34,6 +34,10 @@ const taskReducer = (tasks, action) => {
         }
       });
     }
+    // Make copy of all tasks to reorder them
+    case 'reorder-task': {
+      return [...action.tasks];
+    }
     default: {
       throw Error('Action unknown: ' + action.type);
     }
@@ -85,6 +89,10 @@ const AppContainer = ({ userTheme, setUserTheme }) => {
     dispatch({ type: CONSTANTS.ACTIONS.CHANGE_TASK, task: task });
   };
 
+  const handleReorderTask = tasks => {
+    dispatch({ type: 'reorder-task', tasks: tasks });
+  };
+
   // MODAL CONTEXT
   // const [showDeleteModal, setShowDeleteModal] = useState(false);
   // const [showDeleteCompletedModal, setShowDeleteCompletedModal] =
@@ -109,6 +117,7 @@ const AppContainer = ({ userTheme, setUserTheme }) => {
         onDeleteTask={handleDeleteTask}
         onDeleteCompletedTasks={handleDeleteCompletedTasks}
         onChangeTask={handleChangeTask}
+        onReorderTask={handleReorderTask}
         tasks={state}
       />
       {/* </ModalContext.Provider> */}

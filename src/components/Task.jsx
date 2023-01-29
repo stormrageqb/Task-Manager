@@ -8,8 +8,9 @@ import { StyledForm } from './styles/StyledForm.styled';
 import { StyledInput } from './styles/StyledInput.styled';
 import StyledTrashIcon from './styles/StyledTrashIcon';
 import { CONSTANTS } from '../constants';
+import { Reorder } from 'framer-motion';
 
-const StyledListItem = styled.li`
+const StyledListItem = styled(Reorder.Item)`
   font-size: 1.6rem;
   color: ${({ theme }) => theme.fontColorPrimary};
   font-weight: 400;
@@ -51,6 +52,7 @@ const Task = ({
   onDeleteTask,
   onChangeTask,
   task,
+  reorderTask,
 }) => {
   // const [showModal, setShowModal] = useState(false);
   // const { showDeleteModal, setShowDeleteModal } = useContext(ModalContext);
@@ -107,7 +109,7 @@ const Task = ({
           task={task}
         />
       )}
-      <StyledListItem isEditing={isEditing}>
+      <StyledListItem draggable={true} value={task} isEditing={isEditing}>
         {isEditing && (
           <StyledCharacterCounter>
             {CONSTANTS.MAXIMUM_CHARACTERS - task.text.length}

@@ -9,6 +9,7 @@ import { theme } from './themes';
 
 function App() {
   const [userTheme, setUserTheme] = useState('dark');
+  console.log(setUserTheme);
   return (
     <>
       <ThemeProvider

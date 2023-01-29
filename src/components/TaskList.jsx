@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Reorder } from 'framer-motion';
 import styled from 'styled-components';
 import Button from './Button';
 import Task from './Task';
@@ -29,7 +30,36 @@ const StyledZeroTaskParagraph = styled.p`
   border-bottom: 0.1rem solid ${({ theme }) => theme.fontColorDarkMd};
 `;
 
-const StyledTaskList = styled.ul`
+// const StyledTaskList = styled.ul`
+//   /* For scrollbar, note that flex is needed on parent and flex shrink: 0 on TaskListFooter child element */
+
+//   overflow-y: auto;
+//   /* Change if you want a different height for entire container */
+//   /* max-height: 30rem; */
+//   background-color: ${({ theme }) => theme.appBgMain};
+
+//   border-radius: 0.4rem;
+//   border-bottom-left-radius: 0;
+//   border-bottom-right-radius: 0;
+
+//   &::-webkit-scrollbar-thumb {
+//     background-color: ${({ theme }) => theme.scrollThumb};
+//     border: 0.4rem solid transparent;
+//     border-radius: 0.8rem;
+//     background-clip: padding-box;
+
+//     &:hover {
+//       background-color: ${({ theme }) => theme.scrollThumbHover};
+//     }
+//   }
+
+//   &::-webkit-scrollbar {
+//     width: 1.6rem;
+//   }
+//   scrollbar-color: ${({ theme }) => theme.appBgMain};
+// `;
+
+const StyledTaskList = styled(Reorder.Group)`
   /* For scrollbar, note that flex is needed on parent and flex shrink: 0 on TaskListFooter child element */
 
   overflow-y: auto;
@@ -88,6 +118,7 @@ const TaskList = ({
   onDeleteTask,
   onDeleteCompletedTasks,
   onChangeTask,
+  onReorderTask,
   tasks,
 }) => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -96,6 +127,10 @@ const TaskList = ({
     useState(false);
   const [filter, setFilter] = useState('All');
 
+  // const [reOrderTasks, setReOrderTasks] = useState(tasks);
+  // console.log(tasks);
+
+  // const [reorderTask, setReorderTask] = useState(tasks);
   // MODAL CONTEXT
   // const { showDeleteCompletedModal, setShowDeleteCompletedModal } =
   //   useContext(ModalContext);
@@ -110,7 +145,7 @@ const TaskList = ({
         />
       )}
       <StyledTaskListSection>
-        <StyledTaskList>
+        <StyledTaskList axis="y" onReorder={onReorderTask} values={tasks}>
           {/* Filters through the values found in CONSTANTS which correspond to the dynamic value of filter from useState */}
           {tasks.length === 0 && (
             <StyledZeroTaskParagraph>
