@@ -29,6 +29,7 @@ const StyledListItem = styled(Reorder.Item)`
 
   border-bottom: 0.1rem solid ${({ theme }) => theme.fontColorDarkMd};
   list-style: none;
+  z-index: 10;
   :first-child {
     border-top-left-radius: 0.4rem;
     border-top-right-radius: 0.4rem;
@@ -108,7 +109,16 @@ const Task = ({
           task={task}
         />
       )}
-      <StyledListItem draggable={true} value={task} isEditing={isEditing}>
+      <StyledListItem
+        whileDrag={{
+          position: 'relative',
+          zIndex: '1000',
+          boxShadow: '.5rem .5rem 1rem rgba(0,0,0,0.3)',
+        }}
+        draggable={true}
+        value={task}
+        isEditing={isEditing}
+      >
         {isEditing && (
           <StyledCharacterCounter>
             {CONSTANTS.MAXIMUM_CHARACTERS - task.text.length}
