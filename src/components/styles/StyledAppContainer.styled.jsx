@@ -8,7 +8,7 @@ export const StyledAppContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   /* 5.2rem equals a total of a 4rem gap between AppHeader and AddTask components */
-  grid-template-rows: 5.2rem min-content min-content;
+  grid-template-rows: 5.2rem min-content min-content min-content;
   height: 80vh;
   row-gap: 2rem;
 `;

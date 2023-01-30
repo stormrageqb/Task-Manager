@@ -5,6 +5,7 @@ import AppHeader from './AppHeader';
 import { StyledAppContainer } from './styles/StyledAppContainer.styled';
 import { taskData } from '../taskData';
 import { CONSTANTS } from '../constants';
+import DnDNote from './DnDNote';
 
 const taskReducer = (tasks, action) => {
   console.log(tasks);
@@ -121,6 +122,7 @@ const AppContainer = ({ userTheme, setUserTheme }) => {
         tasks={state}
       />
       {/* </ModalContext.Provider> */}
+      <DnDNote />
     </StyledAppContainer>
   );
 };
