@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-export const StyledDnDNote = styled.p`
+export const StyledDnDNote = styled(motion.p)`
   font-size: 1.4rem;
   grid-column: 1 / -1;
   justify-self: center;
@@ -9,16 +9,9 @@ export const StyledDnDNote = styled.p`
   color: ${({ theme }) => theme.fontColorPrimary};
   font-weight: 300;
   letter-spacing: 0.05rem;
+  //Necessary for animation (starting state is invisible)
   opacity: 0;
-
-  ${props =>
-    props.tasks.length >= 2 &&
-    css`
-      opacity: 1;
-    `}
 `;
-
-
 
 // import { motion } from 'framer-motion';
 
@@ -44,7 +37,6 @@ export const StyledDnDNote = styled.p`
 // };
 
 // const StyledModalContainer = styled(motion.div)`
-
 
 //  <StyledModalContainer
 //         variants={dropIn}
