@@ -34,6 +34,7 @@ const AddTask = ({ onAddTask }) => {
         aria-label="Create a new todo..."
         autoFocus
         required
+        pattern="^[^ ].+[^ ]$"
       />
       <Button type="submit">Add</Button>
     </StyledForm>
