@@ -30,7 +30,7 @@ const StyledZeroTaskParagraph = styled.p`
   border-bottom: 0.1rem solid ${({ theme }) => theme.fontColorDarkMd};
 `;
 
-const StyledTaskList = styled(Reorder.Group)`
+const StyledReorderTaskList = styled(Reorder.Group)`
   /* For scrollbar, note that flex is needed on parent and flex shrink: 0 on TaskListFooter child element */
 
   overflow-y: auto;
@@ -112,7 +112,11 @@ const TaskList = ({
         />
       )}
       <StyledTaskListSection>
-        <StyledTaskList axis="y" onReorder={onReorderTask} values={tasks}>
+        <StyledReorderTaskList
+          axis="y"
+          onReorder={onReorderTask}
+          values={tasks}
+        >
           {/* Filters through the values found in CONSTANTS which correspond to the dynamic value of filter from useState */}
           {tasks.length === 0 && (
             <StyledZeroTaskParagraph>
@@ -128,11 +132,12 @@ const TaskList = ({
                 onDeleteTask={onDeleteTask}
                 onChangeTask={onChangeTask}
                 task={task}
+                tasks={tasks}
                 key={task.id}
               />
             );
           })}
-        </StyledTaskList>
+        </StyledReorderTaskList>
         <StyledTaskListFooter>
           <article>
             <span>

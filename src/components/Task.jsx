@@ -53,6 +53,7 @@ const Task = ({
   onDeleteTask,
   onChangeTask,
   task,
+  tasks,
 }) => {
   // const [showModal, setShowModal] = useState(false);
   // const { showDeleteModal, setShowDeleteModal } = useContext(ModalContext);
@@ -115,7 +116,9 @@ const Task = ({
           zIndex: '1000',
           boxShadow: '.5rem .5rem 1rem rgba(0,0,0,0.3)',
         }}
-        draggable={true}
+        // draggable={true}
+        // This prop is reponsible for making task items draggable when there are two or more tasks provided
+        dragListener={tasks.length >= 2 ? true : false}
         value={task}
         isEditing={isEditing}
       >

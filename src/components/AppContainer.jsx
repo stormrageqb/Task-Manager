@@ -122,7 +122,7 @@ const AppContainer = ({ userTheme, setUserTheme }) => {
         tasks={state}
       />
       {/* </ModalContext.Provider> */}
-      <DnDNote />
+      <DnDNote tasks={state} />
     </StyledAppContainer>
   );
 };
