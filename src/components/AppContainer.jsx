@@ -99,7 +99,13 @@ const AppContainer = ({ userTheme, setUserTheme }) => {
   // const [showDeleteCompletedModal, setShowDeleteCompletedModal] =
   useState(false);
   return (
-    <StyledAppContainer>
+    <StyledAppContainer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        duration: 0.6,
+      }}
+    >
       <AppHeader userTheme={userTheme} setUserTheme={setUserTheme} />
       <AddTask
         onAddTask={handleAddTask}

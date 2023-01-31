@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const StyledAppContainer = styled.div`
+export const StyledAppContainer = styled(motion.div)`
   grid-column: col-start 2 / col-start 4;
   grid-row: 2 / 3;
   grid-row: 2 / 5;
