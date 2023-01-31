@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Button from './Button';
 import Task from './Task';
 import ConfirmDeleteModal from './modal/ConfirmDeleteModal';
+import { StyledZeroTaskParagraph } from './styles/StyledZeroTaskParagraph';
 import { CONSTANTS } from '../constants';
 
 const filterNames = Object.keys(CONSTANTS.FILTERS);
@@ -16,18 +17,6 @@ const StyledTaskListSection = styled.section`
   display: flex;
   flex-direction: column;
   max-height: 62vh;
-`;
-
-const StyledZeroTaskParagraph = styled.p`
-  font-size: 2rem;
-  color: ${({ theme }) => theme.fontColorDark};
-  background-color: ${({ theme }) => theme.appBgMain};
-  font-weight: 500;
-  padding: 3rem;
-  text-align: center;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom: 0.1rem solid ${({ theme }) => theme.fontColorDarkMd};
 `;
 
 const StyledReorderTaskList = styled(Reorder.Group)`
