@@ -1,6 +1,7 @@
 import SunIcon from '/src/assets/icon-sun.svg';
 import MoonIcon from '/src/assets/icon-moon.svg';
 import styled, { css, keyframes } from 'styled-components';
+import { useEffect } from 'react';
 
 const fadeIn = keyframes`
   from {
@@ -83,6 +84,10 @@ const AppHeader = ({ userTheme, setUserTheme }) => {
       ? setUserTheme(prevTheme => (prevTheme = 'light'))
       : setUserTheme(prevTheme => (prevTheme = 'dark'));
   };
+  useEffect(() => {
+    localStorage.setItem('userTheme', JSON.stringify(userTheme));
+  }, [userTheme]);
+
   return (
     <StyledAppHeader>
       <StyledLogo>Todo</StyledLogo>

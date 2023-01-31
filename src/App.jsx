@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import AppContainer from './components/AppContainer';
@@ -8,8 +9,20 @@ import GlobalStyles from './components/styles/GlobalStyles';
 import { theme } from './themes';
 
 function App() {
-  const [userTheme, setUserTheme] = useState('dark');
-  console.log(setUserTheme);
+  // const [userTheme, setUserTheme] = useState('dark');
+  const [userTheme, setUserTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('userTheme');
+    if (savedTheme) {
+      try {
+        const initialValue = JSON.parse(savedTheme);
+        return initialValue;
+      } catch (error) {
+        return '';
+      }
+    } else {
+      return '';
+    }
+  });
   return (
     <>
       <ThemeProvider
