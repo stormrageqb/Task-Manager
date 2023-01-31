@@ -3,6 +3,7 @@ import Button from '../Button';
 import StyledTrashIcon from '../styles/StyledTrashIcon';
 
 import { easeInOut, motion } from 'framer-motion';
+import { usePrefersReducedMotion } from '../../usePrefersReducedMotion';
 
 const StyledModalContainer = styled(motion.div)`
   position: absolute;
@@ -114,6 +115,7 @@ const ModalOverlay = ({
   showDeleteCompletedModal,
   task,
 }) => {
+  const prefersReducedMotion = usePrefersReducedMotion();
   const handleDeleteCompletedTasks = () => {
     onDeleteCompletedTasks();
     setShowDeleteCompletedModal(false);
@@ -126,7 +128,7 @@ const ModalOverlay = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
-          duration: 0.6,
+          duration: prefersReducedMotion ? 0.01 : 0.4,
           ease: easeInOut,
         }}
       >
@@ -171,7 +173,7 @@ const ModalOverlay = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
-        duration: 0.4,
+        duration: prefersReducedMotion ? 0.01 : 0.4,
         ease: easeInOut,
       }}
     >

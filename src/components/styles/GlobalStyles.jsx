@@ -26,6 +26,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     /* For users who do not use animations in browser */
+    /* I also include a custom hook for this functionality */
 @media screen and (prefers-reduced-motion: reduce) {
   * {
     /* Very short durations means JavaScript that relies on events still works */
