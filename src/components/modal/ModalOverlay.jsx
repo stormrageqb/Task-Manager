@@ -2,8 +2,10 @@ import styled from 'styled-components';
 import Button from '../Button';
 import StyledTrashIcon from '../styles/StyledTrashIcon';
 
-const StyledModalContainer = styled.div`
-  position: fixed;
+import { easeInOut, motion } from 'framer-motion';
+
+const StyledModalContainer = styled(motion.div)`
+  position: absolute;
   width: 45%;
   max-width: 100%;
   max-height: 100%;
@@ -15,7 +17,6 @@ const StyledModalContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* border-radius: 0.4rem; */
-  /* background-color: blue; */
   box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
 `;
 
@@ -121,7 +122,14 @@ const ModalOverlay = ({
   // Render two 'separate' modals based on which button is clicked in the UI. Note that the callback method doesn't hide the modal after clicking delete in the deleteCompleted modal, which is why I've provided the full function just above.
   if (showDeleteCompletedModal) {
     return (
-      <StyledModalContainer>
+      <StyledModalContainer
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.6,
+          ease: easeInOut,
+        }}
+      >
         <StyledModalHeader
           theme={{
             modalGradient: ['rgba(87, 221, 255)', 'rgba(192, 88, 243)'],
@@ -159,7 +167,14 @@ const ModalOverlay = ({
     );
   }
   return (
-    <StyledModalContainer>
+    <StyledModalContainer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        duration: 0.6,
+        ease: easeInOut,
+      }}
+    >
       <StyledModalHeader
         theme={{ modalGradient: ['rgba(87, 221, 255)', 'rgba(192, 88, 243)'] }}
       >
