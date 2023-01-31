@@ -24,6 +24,17 @@ const GlobalStyles = createGlobalStyle`
         display: block;
         max-width: 100%;
     }
+
+    /* For users who do not use animations in browser */
+@media screen and (prefers-reduced-motion: reduce) {
+  * {
+    /* Very short durations means JavaScript that relies on events still works */
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 `;
 
 export default GlobalStyles;

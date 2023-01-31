@@ -6,6 +6,8 @@ import { StyledAppContainer } from './styles/StyledAppContainer.styled';
 import { taskData } from '../taskData';
 import { CONSTANTS } from '../constants';
 import DnDNote from './DnDNote';
+import { easeInOut } from 'framer-motion';
+import { usePrefersReducedMotion } from '../usePrefersReducedMotion';
 
 const taskReducer = (tasks, action) => {
   console.log(tasks);
@@ -64,6 +66,7 @@ const init = () => {
 
 const AppContainer = ({ userTheme, setUserTheme }) => {
   const [state, dispatch] = useReducer(taskReducer, initialState, init);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   // Local Storage:
   useEffect(() => {
@@ -94,16 +97,13 @@ const AppContainer = ({ userTheme, setUserTheme }) => {
     dispatch({ type: CONSTANTS.ACTIONS.REORDER_TASK, tasks: tasks });
   };
 
-  // MODAL CONTEXT
-  // const [showDeleteModal, setShowDeleteModal] = useState(false);
-  // const [showDeleteCompletedModal, setShowDeleteCompletedModal] =
-  useState(false);
   return (
     <StyledAppContainer
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
-        duration: 0.6,
+        duration: prefersReducedMotion ? 0.01 : 0.6,
+        ease: easeInOut,
       }}
     >
       <AppHeader userTheme={userTheme} setUserTheme={setUserTheme} />
@@ -112,14 +112,6 @@ const AppContainer = ({ userTheme, setUserTheme }) => {
         onChangeTask={handleChangeTask}
         task={state}
       />
-      {/* <ModalContext.Provider
-        value={{
-          showDeleteModal,
-          setShowDeleteModal,
-          showDeleteCompletedModal,
-          setShowDeleteCompletedModal,
-        }}
-      > */}
       <TaskList
         onDeleteTask={handleDeleteTask}
         onDeleteCompletedTasks={handleDeleteCompletedTasks}
@@ -127,7 +119,6 @@ const AppContainer = ({ userTheme, setUserTheme }) => {
         onReorderTask={handleReorderTask}
         tasks={state}
       />
-      {/* </ModalContext.Provider> */}
       <DnDNote tasks={state} />
     </StyledAppContainer>
   );
