@@ -11,6 +11,10 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         font-size: 62.5%;
         color-scheme: dark light;
+        /* 750px */
+  @media only screen and (max-width: 47.875em) {
+    font-size: 57.5%;
+  }
     }
 
     body {

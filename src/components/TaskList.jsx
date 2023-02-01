@@ -55,22 +55,44 @@ const StyledTaskListFooter = styled.footer`
   border-bottom-right-radius: 0.4rem;
   transition: background-color 0.3s;
 
+  @media only screen and (max-width: 47.875em) {
+    position: relative;
+  }
+
   & article {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     padding: 1rem 1.5rem;
+    /* 750px */
+    @media only screen and (max-width: 47.875em) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     & span {
       font-size: 1.1rem;
       color: ${({ theme }) => theme.fontColorDark};
       font-weight: 400;
     }
+  }
+`;
 
-    & div {
-      display: flex;
-      gap: 1.2rem;
-    }
+const StyledFooterFilter = styled.div`
+  display: flex;
+  gap: 1.2rem;
+
+  /* 750px */
+  @media only screen and (max-width: 47.875em) {
+    position: absolute;
+    bottom: -4.5rem;
+    left: 0;
+    background-color: ${({ theme }) => theme.appBgMain};
+    padding: 1rem 0;
+    width: 100%;
+    justify-content: center;
+    border-radius: 0.4rem;
   }
 `;
 
@@ -134,7 +156,7 @@ const TaskList = ({
               <strong>{remainingTasks.length}</strong> item
               {remainingTasks.length === 1 ? null : 's'} left
             </span>
-            <div>
+            <StyledFooterFilter>
               {filterNames.map(name => {
                 return (
                   <Button
@@ -147,7 +169,7 @@ const TaskList = ({
                   </Button>
                 );
               })}
-            </div>
+            </StyledFooterFilter>
 
             <Button
               footer
