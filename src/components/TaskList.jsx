@@ -6,8 +6,8 @@ import { StyledZeroTaskParagraph } from './styles/app-main/StyledZeroTaskParagra
 import { CONSTANTS } from '../constants';
 import { StyledTaskListSection } from './styles/app-main/StyledTaskListSection';
 import { StyledReorderTaskList } from './styles/app-main/StyledReorderTaskList';
-import { StyledTaskListFooter } from './styles/app-main/StyledTaskListFooter';
-import { StyledFooterFilter } from './styles/app-main/StyledFooterFilter';
+import { StyledTaskListFooter } from './styles/app-footer/StyledTaskListFooter';
+import { StyledFooterFilter } from './styles/app-footer/StyledFooterFilter';
 
 const filterNames = Object.keys(CONSTANTS.FILTERS);
 

@@ -1,5 +1,5 @@
 import { usePrefersReducedMotion } from '../usePrefersReducedMotion';
-import { StyledDnDNote } from './styles/app-main/StyledDnDNote';
+import { StyledDnDNote } from './styles/app-footer/StyledDnDNote';
 
 const DnDNote = ({ tasks }) => {
   const prefersReducedMotion = usePrefersReducedMotion();
