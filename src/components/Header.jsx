@@ -10,10 +10,14 @@ const StyledHeader = styled.header`
       ${props => props.theme.headerGradient[1]}
     ),
     url(/bg-desktop-light.jpg);
-  /* no-repeat left top/contain; */
-  /* background-size: contain;
-  background-repeat: no-repeat;
-  background-position: top left; */
+  @media only screen and (max-width: 64em) {
+    background-image: linear-gradient(
+        to right,
+        ${props => props.theme.headerGradient[0]},
+        ${props => props.theme.headerGradient[1]}
+      ),
+      url(/bg-mobile-light.jpg);
+  }
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -29,6 +33,14 @@ const StyledHeader = styled.header`
           ${props => props.theme.headerGradient[1]}
         ),
         url(/bg-desktop-dark.jpg);
+      @media only screen and (max-width: 64em) {
+        background-image: linear-gradient(
+            to right,
+            ${props => props.theme.headerGradient[0]},
+            ${props => props.theme.headerGradient[1]}
+          ),
+          url(/bg-mobile-dark.jpg);
+      }
     `}
 `;
 
