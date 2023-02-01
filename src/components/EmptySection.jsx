@@ -5,7 +5,7 @@ const StyledEmptySection = styled.div`
   grid-row: 4 / -1;
 
   background-color: ${({ theme }) => theme.emptySectionBg};
-  height: 100%;
+
   transition: background-color 0.3s;
 `;
 

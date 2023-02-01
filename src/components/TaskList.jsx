@@ -16,7 +16,7 @@ const StyledTaskListSection = styled.section`
   box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
   display: flex;
   flex-direction: column;
-  max-height: 62vh;
+  max-height: 58.5vh;
 `;
 
 const StyledReorderTaskList = styled(Reorder.Group)`
@@ -112,6 +112,7 @@ const TaskList = ({
               All caught up! Try adding a todo.
             </StyledZeroTaskParagraph>
           )}
+
           {tasks.filter(CONSTANTS.FILTERS[filter]).map((task, i) => {
             return (
               <Task

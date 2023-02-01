@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
         line-height: 1.6;
         font-weight: 300;
         font-family: ${({ theme }) => theme.font.primary};
+        
     }
 
     img, picture, svg, video {
