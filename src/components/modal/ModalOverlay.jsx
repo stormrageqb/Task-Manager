@@ -19,6 +19,10 @@ const StyledModalContainer = styled(motion.div)`
   grid-template-columns: 1fr 1fr;
   /* border-radius: 0.4rem; */
   box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
+  /* 750px */
+  @media only screen and (max-width: 47.875em) {
+    width: max-content;
+  }
 `;
 
 const StyledModalHeader = styled.header`
@@ -62,6 +66,10 @@ const StyledModalHeader = styled.header`
     border-radius: 50%;
     display: grid;
     place-content: center;
+    @media only screen and (max-width: 47.875em) {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
 
     transition: all 0.25s;
     &::before {
@@ -85,11 +93,17 @@ const StyledModalSection = styled.section`
 
   & h2 {
     font-size: 3.2rem;
+    @media only screen and (max-width: 47.875em) {
+      font-size: 2.4rem;
+    }
   }
 
   & p {
     font-size: 1.8rem;
     text-align: center;
+    @media only screen and (max-width: 47.875em) {
+      font-size: 1.5rem;
+    }
   }
   background-color: ${({ theme }) => theme.fontColorDarkLg};
   padding: 2.4rem;

@@ -39,6 +39,11 @@ const StyledIcon = styled(TrashIcon)`
       border-radius: 50%;
       padding: 1rem;
       cursor: default;
+
+      @media only screen and (max-width: 47.875em) {
+        height: 7rem;
+        width: 7rem;
+      }
     `}
 `;
 

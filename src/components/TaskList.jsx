@@ -93,6 +93,7 @@ const StyledFooterFilter = styled.div`
     width: 100%;
     justify-content: center;
     border-radius: 0.4rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 2rem 3rem -1rem;
   }
 `;
 

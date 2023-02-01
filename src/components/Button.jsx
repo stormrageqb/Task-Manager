@@ -52,6 +52,9 @@ const Button = styled.button`
       &:hover {
         color: ${({ theme }) => theme.fontColorDarkMd};
       }
+      @media only screen and (max-width: 47.875em) {
+        font-size: 2rem;
+      }
     `}
     ${props =>
     props.modalFooter &&
@@ -64,6 +67,9 @@ const Button = styled.button`
 
       &:hover {
         background-color: ${({ theme }) => theme.fontColorDarkMd};
+      }
+      @media only screen and (max-width: 47.875em) {
+        font-size: 1.4rem;
       }
     `}
     ${props =>
