@@ -2,7 +2,7 @@ import React, { useEffect, useReducer, useState } from 'react';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
 import AppHeader from './AppHeader';
-import { StyledAppContainer } from './styles/StyledAppContainer.styled';
+import { StyledAppContainer } from './styles/app-main/StyledAppContainer.styled';
 import { taskData } from '../taskData';
 import { CONSTANTS } from '../constants';
 import DnDNote from './DnDNote';
@@ -10,7 +10,6 @@ import { easeInOut } from 'framer-motion';
 import { usePrefersReducedMotion } from '../usePrefersReducedMotion';
 
 const taskReducer = (tasks, action) => {
-  console.log(tasks);
   switch (action.type) {
     case CONSTANTS.ACTIONS.ADD_TASK: {
       return [

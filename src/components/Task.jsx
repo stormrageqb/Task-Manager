@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import styled, { css } from 'styled-components';
 import Button from './Button';
 import Checkbox from './Checkbox';
 import ConfirmDeleteModal from './modal/ConfirmDeleteModal';
@@ -8,47 +7,8 @@ import { StyledForm } from './styles/StyledForm.styled';
 import { StyledInput } from './styles/StyledInput.styled';
 import StyledTrashIcon from './styles/StyledTrashIcon';
 import { CONSTANTS } from '../constants';
-import { Reorder } from 'framer-motion';
-
-const StyledListItem = styled(Reorder.Item)`
-  font-size: 1.6rem;
-  color: ${({ theme }) => theme.fontColorPrimary};
-  font-weight: 400;
-  display: grid;
-  grid-template-columns: 1fr 10fr 1fr 1fr;
-  /* Change grid to allow form to fit - form is one child of grid including input and button - basically add 1fr to include the the input and save button in one grid column and subtract one from the end column */
-  ${props =>
-    props.isEditing &&
-    css`
-      grid-template-columns: 1fr 11fr 1fr;
-    `}
-  align-items: center;
-  padding: 1.5rem;
-  background-color: ${({ theme }) => theme.appBgMain};
-  transition: background-color 0.3s;
-
-  border-bottom: 0.1rem solid ${({ theme }) => theme.fontColorDarkMd};
-  list-style: none;
-  z-index: 10;
-  :first-child {
-    border-top-left-radius: 0.4rem;
-    border-top-right-radius: 0.4rem;
-  }
-  /* 400px */
-  @media only screen and (max-width: 25em) {
-    grid-template-columns: 1.5fr 10fr 1fr 1fr;
-  }
-`;
-
-const StyledTaskText = styled.span`
-  transition: all 0.2s;
-  ${props =>
-    props.task.complete &&
-    css`
-      text-decoration: line-through;
-      color: ${({ theme }) => theme.fontColorDark};
-    `}
-`;
+import { StyledListItem } from './styles/app-main/StyledListItem';
+import { StyledTaskText } from './styles/app-main/StyledTaskText';
 
 const Task = ({
   isEditing,
