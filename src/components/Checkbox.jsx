@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledCheckbox = styled.input`
   appearance: none;
   background-color: transparent;
-  outline: 0.13rem solid ${({ theme }) => theme.fontColorDark};
+  outline: 0.135rem solid ${({ theme }) => theme.fontColorDark};
   margin: 0;
   font: inherit;
   color: currentColor;
@@ -15,6 +15,10 @@ export const StyledCheckbox = styled.input`
   place-content: center;
   cursor: pointer;
   transition: all 0.25s;
+
+  &:hover {
+    outline: 0.135rem solid ${({ theme }) => theme.primary};
+  }
 
   &::before {
     content: '';

@@ -23,4 +23,8 @@ export const StyledForm = styled.form`
       border-radius: 0;
       box-shadow: none;
     `}
+  /* 400px */
+  @media only screen and (max-width: 25em) {
+    grid-template-columns: 1.5fr 10fr 2fr;
+  }
 `;
