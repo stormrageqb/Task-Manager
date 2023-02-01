@@ -12,4 +12,12 @@ export const StyledDnDNote = styled(motion.p)`
   letter-spacing: 0.05rem;
   //Necessary for animation (starting state is invisible)
   opacity: 0;
+  @media only screen and (max-width: 47.875em) {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 `;

@@ -44,6 +44,10 @@ const StyledLogo = styled.h1`
   color: ${({ theme }) => theme.titleColor};
   line-height: 1;
   padding-top: 0.2rem;
+  /* 750px */
+  @media only screen and (max-width: 47.875em) {
+    font-size: 2.7rem;
+  }
 `;
 
 const StyledSunIcon = styled(SunIcon)`
@@ -60,6 +64,10 @@ const StyledSunIcon = styled(SunIcon)`
   animation: ${props => (props.userTheme === 'dark' ? fadeOut : fadeIn)} 0.3s
     linear;
   transition: visibility 0.3s linear;
+  /* 750px */
+  @media only screen and (max-width: 47.875em) {
+    transform: scale(0.75);
+  }
 `;
 
 const StyledMoonIcon = styled(MoonIcon)`

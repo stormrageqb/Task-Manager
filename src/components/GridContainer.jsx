@@ -19,7 +19,7 @@ const StyledGridContainer = styled.div`
     grid-template-columns:
       [full-start] 2.5rem [center-start] repeat(4, [col-start] 1fr [col-end])
       [center-end] 2.5rem [full-end];
-    grid-template-rows: 5vh 10vh 20vh 40vh 10vh 10vh 5vh;
+    grid-template-rows: 3vh 10vh 20vh 40vh 10vh 10vh 7vh;
   }
 `;
 

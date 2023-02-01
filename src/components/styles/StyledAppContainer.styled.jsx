@@ -17,4 +17,9 @@ export const StyledAppContainer = styled(motion.div)`
   @media only screen and (max-width: 64em) {
     grid-column: center-start / center-end;
   }
+
+  /* 750px */
+  @media only screen and (max-width: 47.875em) {
+    row-gap: 1.2rem;
+  }
 `;
