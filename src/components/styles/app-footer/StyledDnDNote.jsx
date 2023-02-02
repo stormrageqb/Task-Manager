@@ -14,12 +14,12 @@ export const StyledDnDNote = styled(motion.p)`
   opacity: 0;
   @media only screen and (max-width: 47.875em) {
     position: absolute;
-    bottom: 8rem;
-    left: 0;
+    bottom: 2.1rem;
+    left: -0.5rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 `;

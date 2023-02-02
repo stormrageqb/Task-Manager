@@ -21,5 +21,8 @@ export const StyledAppContainer = styled(motion.div)`
   /* 750px */
   @media only screen and (max-width: 47.875em) {
     row-gap: 1.2rem;
+    max-height: 100%;
+    height: 100%;
+    position: relative;
   }
 `;

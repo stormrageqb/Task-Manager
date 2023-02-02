@@ -28,4 +28,8 @@ export const StyledReorderTaskList = styled(Reorder.Group)`
     width: 1.6rem;
   }
   scrollbar-color: ${({ theme }) => theme.appBgMain};
+
+  @media only screen and (max-width: 47.875em) {
+    overflow-y: initial;
+  }
 `;

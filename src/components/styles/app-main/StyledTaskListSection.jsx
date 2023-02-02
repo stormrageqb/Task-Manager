@@ -7,4 +7,7 @@ export const StyledTaskListSection = styled.section`
   display: flex;
   flex-direction: column;
   max-height: 58.5vh;
+  @media only screen and (max-width: 47.875em) {
+    max-height: 100%;
+  }
 `;
