@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="" color="white">
+    <a href="https://task-manager-fm.netlify.app/" target="_blank" color="white">
       Live Link
     </a>
   </h3>
