@@ -85,7 +85,7 @@ I built this project to practice React core concepts, but also to get more comfo
 </br>
 </br>
 
-### Mobile Base Application w/scroll (Dark Theme)
+### Mobile Base Application (Dark Theme)
 
 <img src="src/assets/screenshots/mobile-dark.png" alt="Screenshot of dark theme desktop" style='width: 50%; height: 50%'/>
 </br>
