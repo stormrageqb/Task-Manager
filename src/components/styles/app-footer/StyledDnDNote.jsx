@@ -14,8 +14,8 @@ export const StyledDnDNote = styled(motion.p)`
   opacity: 0;
   @media only screen and (max-width: 47.875em) {
     position: absolute;
-    bottom: 2.1rem;
-    left: -0.5rem;
+    bottom: -6.5rem;
+    left: 0rem;
     width: 100%;
     display: flex;
     justify-content: center;
