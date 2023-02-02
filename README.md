@@ -13,17 +13,15 @@
 <br/>
 <br/>
 
-<div align="center"><img src=""></img></div>
+<div align="center"><img src="src/assets/screenshots/desktop-dark.png" alt="Screenshot of dark theme desktop"></img>
+
+</div>
 <br/>
 <br/>
 
 ## 💡 Technologies:
 
-<img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React icon" height="30" />
-<img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript icon" height="30" />
-<img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" alt="Styles Components icon" height="30" />
-<img src="https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue" height="30"/>
-<img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" height="30"/>
+<img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React icon" height="30" /> <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript icon" height="30" /> <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" alt="Styles Components icon" height="30" /> <img src="https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue" height="30"/> <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" height="30"/>
 
 <br/>
 
@@ -61,6 +59,29 @@ Users can...
 
 I built this project to practice React core concepts, but also to get more comfortable with state management and the useReducer hook, custom hooks, styled components, and drag and drop technology.
 
+## 📷 Screenshots
+
+### Base Application (Light Theme)
+
+<img src="src/assets/screenshots/desktop-light.png" alt="Screenshot of dark theme desktop" style='width: 100%'/>
+</br>
+</br>
+### Completed Filter (Dark Theme)
+<img src="src/assets/screenshots/desktop-dark-completed-filter.png" alt="Screenshot of dark theme desktop" style='width: 100%'/>
+</br>
+</br>
+### Delete Modal (Dark Theme)
+<img src="src/assets/screenshots/desktop-dark-delete-modal.png" alt="Screenshot of dark theme desktop" style='width: 100%'/>
+</br>
+</br>
+### Editing State (Dark Theme)
+<img src="src/assets/screenshots/desktop-dark-editing-state.png" alt="Screenshot of dark theme desktop" style='width: 100%'/>
+</br>
+</br>
+### Mobile Base Application w/scroll (Dark Theme)
+<img src="src/assets/screenshots/mobile-dark.png" alt="Screenshot of dark theme desktop" style='width: 50%; height: 50%'/>
+</br>
+</br>
 ## Questions and Feedback:
 
 Feel free to contact me at mully7773@gmail.com if you have any questions or feedback. <br>
