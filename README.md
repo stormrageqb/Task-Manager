@@ -93,5 +93,3 @@ I built this project to practice React core concepts, but also to get more comfo
 
 ## Questions and Feedback:
 
-Feel free to contact me at mully7773@gmail.com if you have any questions or feedback. <br>
-You can view more of my projects at https://github.com/Mully7773.
